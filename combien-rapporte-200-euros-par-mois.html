@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Combien rapporte 200€ par mois en 20 ans ? — Simule Épargne</title>
+<meta name="description" content="200€ par mois, c'est moins d'un abonnement de salle de sport par semaine. En 20 ans à 7%, ça devient 122 000€. On vous explique pourquoi — et comment visualiser votre propre scénario.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://simulepargne.com/articles/combien-rapporte-200-euros-par-mois">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Combien rapporte 200€ par mois en 20 ans ?">
+<meta property="og:description" content="200€/mois pendant 20 ans = 122 000€. On vous explique pourquoi et comment visualiser votre scénario.">
+<meta property="og:url" content="https://simulepargne.com/articles/combien-rapporte-200-euros-par-mois">
+<meta property="og:locale" content="fr_FR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Combien rapporte 200€ par mois en 20 ans ?",
+  "description": "200€ par mois pendant 20 ans à 7% = 122 000€. On vous explique l'effet boule de neige en langage simple.",
+  "url": "https://simulepargne.com/articles/combien-rapporte-200-euros-par-mois",
+  "inLanguage": "fr-FR",
+  "publisher": {"@type":"Organization","name":"Simule Épargne","url":"https://simulepargne.com"},
+  "datePublished": "2026-03-01"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --forest:#1C3A2F;--sage:#4A7C6F;--gold:#B8975A;--gold-lt:#D4B882;
+  --bg:#F7F3EC;--bg2:#EDE7DB;--bg3:#E4DDD0;
+  --text:#1C3A2F;--text-muted:#5A5248;
+  --border:#C8BFA8;--dark:#0D1F18;
+  --red:#B94040;--white:#FFFFFF;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#121E19;--bg2:#1A2B24;--bg3:#1F332B;
+    --text:#E8DDD0;--text-muted:#A89F94;
+    --border:#2A4038;--dark:#0A1710;
+  }
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px}
+a:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:2px}
+nav{background:var(--dark);padding:0 2rem;height:52px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#E8DDD0;text-decoration:none}
+.nav-brand span{color:var(--gold)}
+.nav-back{font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:#C8BFA8;text-decoration:none;transition:color .2s}
+.nav-back:hover{color:var(--gold)}
+.wrap{max-width:680px;margin:0 auto;padding:3rem 2rem 5rem}
+.tag{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,5vw,46px);font-weight:300;line-height:1.1;color:var(--text);margin-bottom:1rem}
+h1 em{font-style:italic;color:var(--sage)}
+.intro{font-size:17px;line-height:1.8;color:var(--text-muted);font-weight:300;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.meta{font-size:12px;color:var(--text-muted);margin-bottom:2.5rem}
+h2{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:var(--text);margin:2.5rem 0 .75rem;line-height:1.2}
+h2 em{font-style:italic;color:var(--sage)}
+p{font-size:16px;line-height:1.85;color:var(--text);margin-bottom:1.25rem;font-weight:300}
+strong{font-weight:500}
+.big-stat{background:var(--dark);padding:2rem;margin:2rem 0;border-radius:3px;text-align:center}
+.big-stat .num{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:300;color:var(--gold);line-height:1;display:block}
+.big-stat .label{font-size:14px;color:#E8DDD0;margin-top:.5rem;display:block}
+.big-stat .sub{font-size:12px;color:#C8BFA8;margin-top:.25rem;display:block}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0}
+.compare-card{background:var(--bg2);border:1px solid var(--border);padding:1.25rem;border-radius:2px}
+.compare-card.accent{border-color:var(--sage);border-top:3px solid var(--sage)}
+.compare-card .c-label{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin-bottom:.5rem}
+.compare-card .c-val{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--text);line-height:1}
+.compare-card .c-sub{font-size:12px;color:var(--text-muted);margin-top:.3rem}
+.compare-card.accent .c-val{color:var(--sage)}
+.timeline{margin:1.5rem 0;display:flex;flex-direction:column;gap:0}
+.tl-row{display:grid;grid-template-columns:60px 1fr 120px;align-items:center;padding:.75rem 0;border-bottom:1px solid var(--border)}
+.tl-row:first-child{border-top:1px solid var(--border)}
+.tl-year{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--gold);font-weight:300}
+.tl-desc{font-size:13px;color:var(--text-muted)}
+.tl-val{font-family:'Courier New',monospace;font-size:14px;color:var(--text);text-align:right;font-weight:500}
+.callout{background:var(--bg2);border-left:3px solid var(--sage);padding:1.25rem 1.5rem;margin:2rem 0;font-size:15px;line-height:1.75;color:var(--text)}
+.callout strong{color:var(--sage)}
+.scenario-block{background:var(--bg2);border:1px solid var(--border);padding:1.5rem;margin:1.5rem 0;border-top:3px solid var(--gold)}
+.scenario-block h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--text);margin-bottom:1rem}
+.scenario-row{display:flex;justify-content:space-between;align-items:center;padding:.5rem 0;border-bottom:1px solid var(--border);font-size:14px}
+.scenario-row:last-child{border-bottom:none;font-weight:500;padding-top:.75rem}
+.scenario-row .s-label{color:var(--text-muted)}
+.scenario-row .s-val{font-family:'Courier New',monospace;color:var(--text)}
+.scenario-row.total .s-val{color:var(--sage);font-size:16px}
+.cta-block{background:var(--dark);padding:2rem;margin:2.5rem 0;text-align:center;border-radius:3px}
+.cta-block h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#E8DDD0;margin-bottom:.5rem}
+.cta-block p{font-size:14px;color:#C8BFA8;margin-bottom:1.25rem}
+.btn-cta{display:inline-block;background:var(--gold);color:var(--dark);font-size:12px;font-weight:500;letter-spacing:.8px;text-transform:uppercase;padding:12px 24px;text-decoration:none;border-radius:2px;transition:background .2s}
+.btn-cta:hover{background:var(--gold-lt)}
+.btn-ghost{display:inline-block;background:transparent;color:#E8DDD0;font-size:12px;letter-spacing:.8px;text-transform:uppercase;padding:12px 24px;text-decoration:none;border:1.5px solid #C8BFA8;border-radius:2px;margin-left:.75rem;transition:all .2s}
+.btn-ghost:hover{border-color:#E8DDD0;color:#E8DDD0}
+.related{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
+.related-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem}
+.related-link{display:block;font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--text);text-decoration:none;padding:.75rem 0;border-bottom:1px solid var(--border);transition:color .2s}
+.related-link:hover{color:var(--gold)}
+.related-link span{font-size:12px;color:var(--text-muted);font-family:'DM Sans',sans-serif;display:block;margin-top:.15rem}
+.disclaimer{font-size:12px;color:var(--text-muted);line-height:1.7;padding-top:2rem;margin-top:2rem;border-top:1px solid var(--border)}
+footer{background:var(--dark);padding:2rem;text-align:center}
+.foot-brand{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;color:#E8DDD0}
+.foot-brand span{color:var(--gold)}
+.foot-link{font-size:12px;color:#C8BFA8;text-decoration:none;margin-top:.25rem;display:block}
+@media(max-width:600px){
+  .compare-grid{grid-template-columns:1fr}
+  .tl-row{grid-template-columns:50px 1fr 100px}
+  .btn-ghost{display:block;margin-left:0;margin-top:.75rem}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-brand" href="../index.html">Simule<span> Épargne</span></a>
+  <a class="nav-back" href="../index.html">← Retour à l'accueil</a>
+</nav>
+<main class="wrap">
+  <p class="tag">Épargne & simulation</p>
+  <h1>Combien rapporte <em>200€ par mois</em><br>en 20 ans ?</h1>
+  <p class="intro">200€ par mois, c'est moins d'un abonnement de salle de sport par semaine. C'est aussi, sur 20 ans, un capital que beaucoup n'auraient pas imaginé. On a fait le calcul — et on partage ce qu'on a compris.</p>
+  <p class="meta">Simule Épargne · Lecture : 4 minutes · Ce n'est pas un conseil financier, juste ce qu'on a compris</p>
+
+  <h2>La réponse directe</h2>
+  <p>Avec 200€ épargnés chaque mois pendant 20 ans, à un rendement annuel moyen de 7%, vous obtenez :</p>
+
+  <div class="big-stat" aria-label="Résultat : 122 000 euros">
+    <span class="num">122 000 €</span>
+    <span class="label">capital final estimé</span>
+    <span class="sub">pour 48 000 € versés de votre poche</span>
+  </div>
+
+  <p>Vous avez versé <strong>48 000€</strong> de votre poche. Les <strong>74 000€ restants</strong> — soit plus de la moitié du capital final — viennent des gains générés par votre épargne. C'est ça, l'effet boule de neige.</p>
+
+  <div class="compare-grid">
+    <div class="compare-card">
+      <div class="c-label">Ce que vous versez</div>
+      <div class="c-val">48 000 €</div>
+      <div class="c-sub">200€ × 12 × 20 ans</div>
+    </div>
+    <div class="compare-card accent">
+      <div class="c-label">Gains générés</div>
+      <div class="c-val">74 000 €</div>
+      <div class="c-sub">l'argent de votre argent</div>
+    </div>
+  </div>
+
+  <h2>Comment ça <em>progresse dans le temps</em></h2>
+  <p>Ce qui surprend le plus, c'est que ça s'accélère. Les premières années semblent lentes. Puis la courbe décolle.</p>
+
+  <div class="timeline" role="list" aria-label="Évolution du capital dans le temps">
+    <div class="tl-row" role="listitem">
+      <span class="tl-year">5 ans</span>
+      <span class="tl-desc">Les gains commencent à s'accumuler</span>
+      <span class="tl-val">14 300 €</span>
+    </div>
+    <div class="tl-row" role="listitem">
+      <span class="tl-year">10 ans</span>
+      <span class="tl-desc">L'effet boule de neige devient visible</span>
+      <span class="tl-val">34 600 €</span>
+    </div>
+    <div class="tl-row" role="listitem">
+      <span class="tl-year">15 ans</span>
+      <span class="tl-desc">Les gains dépassent les versements</span>
+      <span class="tl-val">64 400 €</span>
+    </div>
+    <div class="tl-row" role="listitem">
+      <span class="tl-year">20 ans</span>
+      <span class="tl-desc">Le capital final — pour 48 000€ versés</span>
+      <span class="tl-val">122 000 €</span>
+    </div>
+    <div class="tl-row" role="listitem">
+      <span class="tl-year">30 ans</span>
+      <span class="tl-desc">Si vous continuez 10 ans de plus</span>
+      <span class="tl-val">340 000 €</span>
+    </div>
+  </div>
+
+  <p>Entre 20 et 30 ans, vous n'avez versé que 24 000€ de plus — mais le capital a presque triplé. C'est parce qu'à ce stade, les gains sur les gains dépassent largement ce que vous mettez de côté chaque mois.</p>
+
+  <h2>Et si je mets <em>moins</em> ou <em>plus</em> ?</h2>
+  <p>200€ c'est un exemple. Voici ce que ça donne avec d'autres montants, toujours sur 20 ans à 7% :</p>
+
+  <div class="scenario-block">
+    <h3>Comparaison sur 20 ans à 7%</h3>
+    <div class="scenario-row"><span class="s-label">50€ par mois</span><span class="s-val">30 500 €</span></div>
+    <div class="scenario-row"><span class="s-label">100€ par mois</span><span class="s-val">61 000 €</span></div>
+    <div class="scenario-row"><span class="s-label">200€ par mois</span><span class="s-val">122 000 €</span></div>
+    <div class="scenario-row"><span class="s-label">300€ par mois</span><span class="s-val">183 000 €</span></div>
+    <div class="scenario-row total"><span class="s-label">500€ par mois</span><span class="s-val">305 000 €</span></div>
+  </div>
+
+  <p>Le capital est presque proportionnel au montant mensuel — ce qui veut dire que même 50€/mois donne des résultats significatifs sur 20 ans. L'important c'est de commencer, pas de mettre beaucoup.</p>
+
+  <h2>Mais <em>7%, c'est réaliste</em> ?</h2>
+  <p>C'est la question qu'on s'est posée. 7% c'est le rendement annuel moyen historique des grands indices boursiers mondiaux (type ETF MSCI World) sur le long terme — environ 30 ans. Ce n'est pas garanti, certaines années sont négatives, d'autres très positives. Sur le long terme, la moyenne a été autour de là.</p>
+  <p>Si vous êtes plus prudent, voici ce que donnent d'autres taux pour 200€/mois sur 20 ans :</p>
+
+  <div class="scenario-block">
+    <h3>200€/mois sur 20 ans selon le taux</h3>
+    <div class="scenario-row"><span class="s-label">3% (fonds euros, Livret A)</span><span class="s-val">65 700 €</span></div>
+    <div class="scenario-row"><span class="s-label">5% (allocation mixte)</span><span class="s-val">82 100 €</span></div>
+    <div class="scenario-row"><span class="s-label">7% (ETF actions, historique)</span><span class="s-val">122 000 €</span></div>
+    <div class="scenario-row total"><span class="s-label">10% (hypothèse optimiste)</span><span class="s-val">183 000 €</span></div>
+  </div>
+
+  <div class="callout">
+    <strong>Ce qu'on a retenu :</strong> même à 3% — le taux d'un fonds euros sécurisé — vous finissez à 65 700€ pour 48 000€ versés. L'effet boule de neige fonctionne à tous les taux. Ce qui change, c'est l'ampleur du résultat.
+  </div>
+
+  <h2>Ce que ça signifie <em>concrètement</em></h2>
+  <p>200€ par mois, c'est environ <strong>6,50€ par jour</strong>. C'est deux cafés et un sandwich. Ce n'est pas rien — mais mis en regard de ce que ça peut devenir, ça aide à prioriser.</p>
+  <p>Ce n'est pas une invitation à vous priver. C'est une invitation à <strong>voir</strong> — et à décider en connaissance de cause. Certains arbitrages valent vraiment le coup une fois qu'on a visualisé les chiffres.</p>
+
+  <div class="cta-block">
+    <h3>Simulez votre propre montant</h3>
+    <p>Entrez vos chiffres réels — capital de départ, montant mensuel, durée — et voyez ce que ça donne pour vous.</p>
+    <a class="btn-cta" href="../index.html#simulateur">Lancer le simulateur gratuit</a>
+    <a class="btn-ghost" href="pourquoi-commencer-jeune.html">Lire : pourquoi commencer tôt →</a>
+  </div>
+
+  <div class="related">
+    <p class="related-label">À lire aussi</p>
+    <a class="related-link" href="controle-abonnements.html">
+      Ce petit 9,99€ qui vous coûte 800€ par an
+      <span>Calculez le vrai coût annuel de vos abonnements</span>
+    </a>
+    <a class="related-link" href="pourquoi-commencer-jeune.html">
+      Pourquoi commencer à épargner à 25 ans change tout
+      <span>Ce qu'on aurait voulu savoir plus tôt</span>
+    </a>
+  </div>
+
+  <p class="disclaimer">Ce contenu est partagé à titre informatif et pédagogique. Les chiffres sont des estimations basées sur un taux constant — les rendements réels varient chaque année et ne sont pas garantis. Ce n'est pas un conseil financier. Pour une stratégie personnalisée, consultez un professionnel agréé.</p>
+</main>
+<footer>
+  <a class="foot-brand nav-brand" href="../index.html">Simule<span> Épargne</span></a>
+  <a class="foot-link" href="../index.html">← Retour à l'accueil</a>
+</footer>
+</body>
+</html>
