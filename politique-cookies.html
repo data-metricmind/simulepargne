@@ -17,15 +17,9 @@
   --text:#1C3A2F;--text-muted:#5A5248;
   --border:#C8BFA8;--dark:#0D1F18;
 }
-@media(prefers-color-scheme:dark){
-  :root{
-    --bg:#121E19;--bg2:#1A2B24;
-    --text:#E8DDD0;--text-muted:#A89F94;
-    --border:#2A4038;--dark:#0A1710;
-  }
-}
+
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.7}
+body{font-family:'DM Sans',sans-serif;background:#F7F3EC;color:#1C3A2F;font-size:16px;line-height:1.7}
 a:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:2px}
 a{color:var(--sage);text-underline-offset:3px}
 a:hover{color:var(--gold)}
@@ -36,37 +30,34 @@ nav{background:var(--dark);padding:0 2.5rem;height:52px;display:flex;align-items
 .nav-back:hover{color:var(--gold)}
 .wrap{max-width:680px;margin:0 auto;padding:3rem 2rem 5rem}
 .tag{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
-h1{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--text);margin-bottom:.5rem;line-height:1.1}
-.subtitle{font-size:14px;color:var(--text-muted);margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
-h2{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--text);margin:2rem 0 .75rem}
-h3{font-size:15px;font-weight:500;color:var(--text);margin:1.25rem 0 .5rem}
-p{font-size:15px;line-height:1.8;color:var(--text);margin-bottom:1rem;font-weight:300}
+h1{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:#1C3A2F;margin-bottom:.5rem;line-height:1.1}
+.subtitle{font-size:14px;color:#5A5248;margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+h2{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:#1C3A2F;margin:2rem 0 .75rem}
+h3{font-size:15px;font-weight:500;color:#1C3A2F;margin:1.25rem 0 .5rem}
+p{font-size:15px;line-height:1.8;color:#1C3A2F;margin-bottom:1rem;font-weight:300}
 
 /* Tableau cookies */
 .cookie-table{width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:13px}
-.cookie-table th{background:var(--bg2);color:var(--text);padding:.6rem 1rem;text-align:left;font-weight:500;border-bottom:2px solid var(--border)}
-.cookie-table td{padding:.6rem 1rem;border-bottom:1px solid var(--border);color:var(--text);vertical-align:top;line-height:1.5}
+.cookie-table th{background:#EDE7DB;color:#1C3A2F;padding:.6rem 1rem;text-align:left;font-weight:500;border-bottom:2px solid var(--border)}
+.cookie-table td{padding:.6rem 1rem;border-bottom:1px solid var(--border);color:#1C3A2F;vertical-align:top;line-height:1.5}
 .cookie-table tr:last-child td{border-bottom:none}
 .badge{display:inline-block;font-size:10px;letter-spacing:.6px;text-transform:uppercase;padding:2px 8px;border-radius:1px;font-weight:500}
 .badge-required{background:#E8F0ED;color:var(--sage)}
 .badge-analytics{background:#FDF3E3;color:#7A5C1E}
-@media(prefers-color-scheme:dark){
-  .badge-required{background:#1A3A2F;color:#6ABF9A}
-  .badge-analytics{background:#2A2010;color:#C9A84C}
-}
+
 
 /* Bloc consentement */
-.consent-block{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--gold);padding:1.5rem;margin:2rem 0}
-.consent-block h3{margin-top:0;margin-bottom:.75rem;color:var(--text)}
+.consent-block{background:#EDE7DB;border:1px solid var(--border);border-left:3px solid var(--gold);padding:1.5rem;margin:2rem 0}
+.consent-block h3{margin-top:0;margin-bottom:.75rem;color:#1C3A2F}
 .consent-block p{margin-bottom:.75rem;font-size:14px}
 .consent-block p:last-child{margin-bottom:0}
 .consent-btn{display:inline-block;background:var(--dark);color:#E8DDD0;font-size:12px;font-weight:500;letter-spacing:.8px;text-transform:uppercase;padding:9px 18px;border:none;cursor:pointer;border-radius:2px;font-family:'DM Sans',sans-serif;margin-right:.75rem;margin-top:.5rem;transition:background .2s}
 .consent-btn:hover{background:#1A2B24}
-.consent-btn.secondary{background:transparent;color:var(--text-muted);border:1px solid var(--border)}
+.consent-btn.secondary{background:transparent;color:#5A5248;border:1px solid var(--border)}
 .consent-btn.secondary:hover{border-color:var(--gold);color:var(--gold);background:transparent}
 
 /* Info block */
-.info-note{background:var(--bg2);border-radius:2px;padding:1rem 1.25rem;margin:1.25rem 0;font-size:14px;color:var(--text-muted);line-height:1.7;border-left:3px solid var(--sage)}
+.info-note{background:#EDE7DB;border-radius:2px;padding:1rem 1.25rem;margin:1.25rem 0;font-size:14px;color:#5A5248;line-height:1.7;border-left:3px solid var(--sage)}
 
 footer{background:var(--dark);padding:2rem;text-align:center}
 .foot-brand{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;color:#E8DDD0}
@@ -145,7 +136,7 @@ footer{background:var(--dark);padding:2rem;text-align:center}
   <h2>Google Analytics — ce qu'on mesure</h2>
   <p>On utilise Google Analytics 4 via Google Tag Manager pour comprendre comment les visiteurs utilisent le site : quelles pages sont consultées, depuis quel type d'appareil, combien de temps en moyenne. Ces données sont <strong>anonymisées</strong> — aucune information permettant d'identifier un individu n'est collectée.</p>
   <p>La configuration mise en place respecte les recommandations de la CNIL :</p>
-  <ul style="padding-left:1.5rem;margin-bottom:1rem;font-size:15px;font-weight:300;line-height:1.8;color:var(--text)">
+  <ul style="padding-left:1.5rem;margin-bottom:1rem;font-size:15px;font-weight:300;line-height:1.8;color:#1C3A2F">
     <li>Anonymisation de l'adresse IP activée</li>
     <li>Durée de conservation limitée à 13 mois</li>
     <li>Pas de partage de données avec Google à des fins publicitaires</li>
@@ -158,12 +149,12 @@ footer{background:var(--dark);padding:2rem;text-align:center}
     <p>Vous pouvez accepter ou refuser les cookies d'analyse. Le refus n'affecte en rien votre accès au site et à ses outils — tout reste disponible gratuitement.</p>
     <button class="consent-btn" id="btn-accept" onclick="acceptCookies()">Accepter l'analyse</button>
     <button class="consent-btn secondary" id="btn-refuse" onclick="refuseCookies()">Refuser</button>
-    <p id="consent-status" style="margin-top:.75rem;font-size:13px;color:var(--text-muted)"></p>
+    <p id="consent-status" style="margin-top:.75rem;font-size:13px;color:#5A5248"></p>
   </div>
 
   <h3>Désactiver via votre navigateur</h3>
   <p>Vous pouvez également désactiver tous les cookies via les paramètres de votre navigateur :</p>
-  <ul style="padding-left:1.5rem;margin-bottom:1rem;font-size:15px;font-weight:300;line-height:1.8;color:var(--text)">
+  <ul style="padding-left:1.5rem;margin-bottom:1rem;font-size:15px;font-weight:300;line-height:1.8;color:#1C3A2F">
     <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Chrome</a></li>
     <li><a href="https://support.mozilla.org/fr/kb/activer-desactiver-cookies" target="_blank" rel="noopener">Firefox</a></li>
     <li><a href="https://support.apple.com/fr-fr/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Safari</a></li>
@@ -175,7 +166,7 @@ footer{background:var(--dark);padding:2rem;text-align:center}
 
   <h2>Mise à jour de cette politique</h2>
   <p>Cette politique peut être mise à jour pour refléter les évolutions du site ou de la réglementation. La date de dernière mise à jour est indiquée en haut de page.</p>
-  <p>Pour toute question : <a href="mailto:contact@simulepargne.com">contact@simulepargne.com</a></p>
+  <p>Pour toute question : <a href="/cdn-cgi/l/email-protection#f2919d9c86939186b2819b9f879e97829380959c97dc919d9f"><span class="__cf_email__" data-cfemail="ceada1a0baafadba8ebda7a3bba2abbeafbca9a0abe0ada1a3">[email&#160;protected]</span></a></p>
 
 </main>
 
@@ -189,7 +180,7 @@ footer{background:var(--dark);padding:2rem;text-align:center}
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function getConsent(){return localStorage.getItem('se_cookie_consent')}
 
 function acceptCookies(){
@@ -209,12 +200,4 @@ function refuseCookies(){
 function updateStatus(){
   const s=getConsent();
   const el=document.getElementById('consent-status');
-  if(s==='accepted') el.textContent='✓ Vous avez accepté les cookies d\'analyse. Merci.';
-  else if(s==='refused') el.textContent='✓ Vous avez refusé les cookies d\'analyse. Seuls les cookies nécessaires sont déposés.';
-  else el.textContent='';
-}
-
-updateStatus();
-</script>
-</body>
-</html>
+  if(s==='accepted') el.textContent='✓ Vous a
