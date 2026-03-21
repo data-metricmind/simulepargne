@@ -131,19 +131,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-links a:hover{color:var(--text)}
 .nav-links a.nav-articles{color:var(--gold)}
 .nav-links a.nav-articles:hover{color:var(--gold-lt)}
-.nav-cta{background:var(--dark);color:#E8DDD0;font-size:11px;letter-spacing:.8px;text-transform:uppercase;padding:8px 18px;text-decoration:none;transition:background .2s;border-radius:2px;flex-shrink:0}
-.nav-cta:hover{background:#1A2B24}
+.nav-cta{background:var(--gold);color:#1C3A2F;font-size:11px;letter-spacing:.8px;text-transform:uppercase;padding:8px 18px;text-decoration:none;transition:background .2s;border-radius:2px;flex-shrink:0;font-weight:500}
+.nav-cta:hover{background:var(--gold-lt)}
 /* Mobile menu */
-.nav-mobile-btn{display:none;background:none;border:none;cursor:pointer;padding:4px;color:var(--text);margin-left:auto}
+.nav-mobile-btn{display:none;background:none;border:none;cursor:pointer;padding:4px;color:var(--text);margin-left:auto;flex-shrink:0}
 .nav-mobile-btn svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2}
-.nav-mobile-panel{display:none;position:fixed;top:58px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);padding:1rem 2.5rem;z-index:99;flex-direction:column;gap:.75rem}
-.nav-mobile-panel.open{display:flex}
+.nav-mobile-panel{position:fixed;top:58px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);padding:1rem 2.5rem;z-index:99;flex-direction:column;gap:.75rem;display:none !important}
+.nav-mobile-panel.open{display:flex !important}
 .nav-mobile-panel a{font-size:13px;letter-spacing:.8px;text-transform:uppercase;color:var(--text-muted);text-decoration:none;padding:.5rem 0;border-bottom:1px solid var(--border)}
 .nav-mobile-panel a:last-child{border-bottom:none;color:var(--gold)}
 @media(max-width:768px){
   .nav-links{display:none}
   .nav-mobile-btn{display:block}
   nav{padding:0 1.5rem}
+  .nav-cta{display:none}
 }
 
 /* ── HERO ── */
@@ -168,12 +169,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 section{padding:5rem 2.5rem}
 .container{max-width:960px;margin:0 auto}
 .eyebrow{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
-.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,40px);font-weight:300;line-height:1.15;color:var(--forest);margin-bottom:1rem}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,40px);font-weight:300;line-height:1.15;color:var(--text);margin-bottom:1rem}
 .sec-title em{font-style:italic;color:var(--sage)}
-.sec-lead{font-size:16px;line-height:1.8;color:var(--muted);max-width:540px;font-weight:300}
+.sec-lead{font-size:16px;line-height:1.8;color:var(--text-muted);max-width:540px;font-weight:300}
 
 /* ── SIMULATEUR ── */
-#simulateur{background:var(--white)}
+#simulateur{background:var(--bg)}
 .sim-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2.5rem;align-items:start}
 .sim-controls{display:flex;flex-direction:column;gap:1.75rem}
 .ctrl-lbl{font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;display:block}
@@ -200,19 +201,19 @@ input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 3px var(-
 .ctrl-free-input:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 .ctrl-unit{font-size:13px;color:var(--muted);font-weight:400}
 .sim-cards{display:flex;flex-direction:column;gap:.85rem}
-.sim-card{padding:1.1rem 1.4rem;border-left:3px solid var(--border);background:var(--cream)}
+.sim-card{padding:1.1rem 1.4rem;border-left:3px solid var(--border);background:var(--bg2)}
 .sim-card.c-gold{border-left-color:var(--gold)}
 .sim-card.c-sage{border-left-color:var(--sage)}
-.sim-card.c-forest{border-left-color:var(--forest)}
-.sim-lbl{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem}
-.sim-val{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--forest);line-height:1}
+.sim-card.c-forest{border-left-color:#2A5244}
+.sim-lbl{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin-bottom:.25rem}
+.sim-val{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--text);line-height:1}
 .sim-val.sage{color:var(--sage)}
-.sim-sub{font-size:12px;color:var(--muted);margin-top:.2rem}
+.sim-sub{font-size:12px;color:var(--text-muted);margin-top:.2rem}
 .chart-area{margin-top:2.5rem}
 .chart-legend{display:flex;gap:1.5rem;margin-bottom:.75rem;flex-wrap:wrap}
-.leg{display:flex;align-items:center;gap:.45rem;font-size:12px;color:var(--muted)}
+.leg{display:flex;align-items:center;gap:.45rem;font-size:12px;color:var(--text-muted)}
 .leg-sq{width:10px;height:10px;border-radius:1px;flex-shrink:0}
-.chart-wrap{background:var(--cream);border:1px solid var(--border);padding:1.25rem;height:280px;position:relative}
+.chart-wrap{background:var(--bg2);border:1px solid var(--border);padding:1.25rem;height:280px;position:relative}
 
 /* ── BUDGET ── */
 #budget{background:var(--cream2)}
@@ -235,7 +236,7 @@ input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 3px var(-
 .b-dl-txt p{font-size:13px;color:var(--gold-lt)}
 
 /* ── ENVELOPPES ── */
-#enveloppes{background:var(--white)}
+#enveloppes{background:var(--bg)}
 .env-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2.5rem}
 .env-card{border:1px solid var(--border);padding:1.6rem}
 .env-tag{font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
@@ -255,7 +256,7 @@ input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 3px var(-
 .step-body{font-size:14px;line-height:1.8;color:var(--muted);font-weight:300}
 
 /* ── FAQ ── */
-#faq{background:var(--white)}
+#faq{background:var(--bg)}
 .faq-list{margin-top:2.5rem}
 .faq-item{border-bottom:1px solid var(--border)}
 .faq-item:first-child{border-top:1px solid var(--border)}
@@ -683,11 +684,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#budget">50/30/20</a>
       <a href="#enveloppes">Où placer ?</a>
       <a href="articles/index.html">Articles</a>
-      <a href="mentions-legales.html">Mentions légales</a>
-      <a href="politique-cookies.html">Cookies</a>
     </nav>
     <p class="foot-disc">Ce site est éducatif et ne constitue pas un conseil en investissement. Les simulations sont données à titre indicatif et ne garantissent pas les performances futures. Aucune donnée personnelle n'est collectée ou enregistrée. Pour toute décision financière personnelle, consultez un professionnel agréé.</p>
-    <p style="font-size:11px;color:#4A5E55;margin-top:1rem">© 2026 Simule Épargne — Tous droits réservés</p>
+    <p style="font-size:11px;color:#4A5E55;margin-top:1rem">© 2026 Simule Épargne — <a href="mentions-legales.html" style="color:#4A5E55;text-decoration:underline">Mentions légales</a> · <a href="politique-cookies.html" style="color:#4A5E55;text-decoration:underline">Politique cookies</a></p>
   </div>
 </footer>
 
