@@ -81,6 +81,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-KXWQPM96');</script>
 <!-- End Google Tag Manager -->
+<link rel="stylesheet" href="/shared.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -113,24 +114,22 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 .skip-link:focus{top:1rem}
 
 /* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;gap:2rem;padding:0 2.5rem;height:58px;background:rgba(247,243,236,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;gap:2rem;padding:0 2.5rem;height:58px;background:#F7F3EC;border-bottom:1px solid #C8BFA8}
 .nav-brand{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:#1C3A2F;text-decoration:none;letter-spacing:.3px;flex-shrink:0}
-.nav-brand span{color:var(--gold)}
+.nav-brand span{color:#B8975A}
 .nav-links{display:flex;gap:1.5rem;align-items:center;flex:1;justify-content:center}
 .nav-links a{font-size:11px;letter-spacing:.9px;text-transform:uppercase;color:#5A5248;text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:#1C3A2F}
-.nav-links a.nav-articles{color:var(--gold)}
-.nav-links a.nav-articles:hover{color:var(--gold-lt)}
-.nav-cta{background:var(--gold);color:#1C3A2F;font-size:11px;letter-spacing:.8px;text-transform:uppercase;padding:8px 18px;text-decoration:none;transition:background .2s;border-radius:2px;flex-shrink:0;font-weight:500}
-.nav-cta:hover{background:var(--gold-lt)}
-/* Mobile menu */
+.nav-links a.nav-articles{color:#B8975A}
+.nav-links a.nav-articles:hover{color:#D4B882}
+.nav-cta{background:#B8975A;color:#1C3A2F;font-size:11px;letter-spacing:.8px;text-transform:uppercase;padding:8px 18px;text-decoration:none;transition:background .2s;border-radius:2px;flex-shrink:0;font-weight:500}
+.nav-cta:hover{background:#D4B882}
 .nav-mobile-btn{display:none;background:none;border:none;cursor:pointer;padding:4px;color:#1C3A2F;margin-left:auto;flex-shrink:0}
 .nav-mobile-btn svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2}
-.nav-mobile-panel{position:fixed;top:58px;left:0;right:0;background:#F7F3EC;border-bottom:1px solid var(--border);padding:1rem 2.5rem;z-index:99;flex-direction:column;gap:.75rem;display:none !important}
+.nav-mobile-panel{position:fixed;top:58px;left:0;right:0;background:#F7F3EC;border-bottom:1px solid #C8BFA8;padding:1rem 2.5rem;z-index:99;flex-direction:column;gap:.75rem;display:none !important}
 .nav-mobile-panel.open{display:flex !important}
-.nav-mobile-panel a{font-size:13px;letter-spacing:.8px;text-transform:uppercase;color:#5A5248;text-decoration:none;padding:.5rem 0;border-bottom:1px solid var(--border)}
-.nav-mobile-panel a:last-child{border-bottom:none;color:var(--gold)}
+.nav-mobile-panel a{font-size:13px;letter-spacing:.8px;text-transform:uppercase;color:#5A5248;text-decoration:none;padding:.5rem 0;border-bottom:1px solid #C8BFA8}
+.nav-mobile-panel a:last-child{border-bottom:none;color:#B8975A}
 @media(max-width:768px){
   .nav-links{display:none}
   .nav-mobile-btn{display:block}
@@ -259,7 +258,6 @@ input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 3px var(-
 .faq-item.open .faq-a{max-height:300px;padding-bottom:1.25rem}
 .faq-a p{font-size:15px;line-height:1.8;color:var(--muted);font-weight:300}
 
-/* ── FOOTER ── */
 footer{background:var(--dark);padding:3.5rem 2.5rem 2rem}
 .foot-inner{max-width:960px;margin:0 auto}
 .foot-brand{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#E8DDD0}
@@ -296,6 +294,7 @@ footer{background:var(--dark);padding:3.5rem 2.5rem 2rem}
   .step{grid-template-columns:40px 1fr;gap:1rem}
 }
 </style>
+<script src="/shared.js" defer></script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -307,28 +306,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <a class="skip-link" href="#simulateur">Aller au contenu principal</a>
 
 <!-- NAV -->
-<nav role="navigation" aria-label="Navigation principale">
-  <a class="nav-brand" href="index.html" aria-label="Simule Épargne — retour à l'accueil">Simule<span> Épargne</span></a>
-  <div class="nav-links" role="list">
-    <a href="#simulateur" role="listitem">Simulateur</a>
-    <a href="#budget" role="listitem">50/30/20</a>
-    <a href="#enveloppes" role="listitem">Où placer ?</a>
-    <a href="#faq" role="listitem">Questions</a>
-    <a href="articles/index.html" class="nav-articles" role="listitem">Articles</a>
-  </div>
-  <button class="nav-mobile-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-mobile-panel" id="nav-mobile-btn">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-  </button>
-  <a class="nav-cta" href="#simulateur" aria-label="Accéder au simulateur d'épargne">Simuler</a>
-</nav>
-<div class="nav-mobile-panel" id="nav-mobile-panel" role="navigation" aria-label="Menu mobile">
-  <a href="#simulateur">Simulateur</a>
-  <a href="#budget">50/30/20</a>
-  <a href="#enveloppes">Où placer ?</a>
-  <a href="#faq">Questions</a>
-  <a href="articles/index.html">Articles →</a>
-</div>
-
+<div id="nav-placeholder"></div>
 <!-- HERO -->
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero-bg" aria-hidden="true"></div>
@@ -338,8 +316,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1 id="hero-title">Pas besoin d'être riche<br>pour commencer.<br>Il faut juste <em>voir.</em></h1>
     <p class="hero-sub">Découvrez en quelques secondes ce que votre argent peut devenir si vous l'épargnez régulièrement. Aucune inscription. Aucun jargon.</p>
     <div class="hero-actions">
-      <a class="btn-primary" href="#simulateur">Lancer le simulateur</a>
-      <a class="btn-ghost" href="#budget">Télécharger le modèle budget</a>
+      <a class="btn-primary" href="#simulateur" onclick="window.dataLayer=window.dataLayer||[];dataLayer.push({event:'cta_click',cta_text:'Lancer le simulateur',cta_location:'hero'});">Lancer le simulateur</a>
+      <a class="btn-ghost" href="#budget" onclick="window.dataLayer=window.dataLayer||[];dataLayer.push({event:'cta_click',cta_text:'Télécharger le modèle budget',cta_location:'hero'});">Télécharger le modèle budget</a>
     </div>
   </div>
   <dl class="hero-stats" aria-label="Exemples chiffrés">
@@ -496,7 +474,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h3>Modèle budget mensuel — gratuit</h3>
         <p>Fichier Excel à remplir : vos revenus, vos dépenses, ce qu'il reste pour épargner</p>
       </div>
-      <a class="btn-primary" href="budget_50_30_20.xlsx" download aria-label="Télécharger le modèle budget Excel gratuitement">Télécharger gratuitement</a>
+      <a class="btn-primary" href="budget_50_30_20.xlsx" download aria-label="Télécharger le modèle budget Excel gratuitement" onclick="window.dataLayer=window.dataLayer||[];dataLayer.push({event:'file_download',file_name:'budget_50_30_20.xlsx',cta_location:'section_budget'});">Télécharger gratuitement</a>
     </div>
   </div>
 </section>
@@ -663,21 +641,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- FOOTER -->
-<footer role="contentinfo">
-  <div class="foot-inner">
-    <div class="foot-brand">Simule<span> Épargne</span></div>
-    <p class="foot-tagline">Comprendre l'épargne, gratuitement, pour tous</p>
-    <p style="font-size:13px;color:#A89F94;margin-top:.75rem;max-width:480px;line-height:1.65">Simule Épargne est un projet indépendant. On n'est pas conseillers financiers — on partage ce qu'on a appris sur l'épargne, en langage simple, pour que tout le monde puisse visualiser et comprendre.</p>
-    <nav class="foot-nav" aria-label="Navigation footer">
-      <a href="#simulateur">Simulateur</a>
-      <a href="#budget">50/30/20</a>
-      <a href="#enveloppes">Où placer ?</a>
-      <a href="articles/index.html">Articles</a>
-    </nav>
-    <p class="foot-disc">Ce site est éducatif et ne constitue pas un conseil en investissement. Les simulations sont données à titre indicatif et ne garantissent pas les performances futures. Aucune donnée personnelle n'est collectée ou enregistrée. Pour toute décision financière personnelle, consultez un professionnel agréé.</p>
-    <p style="font-size:11px;color:#4A5E55;margin-top:1rem">© 2026 Simule Épargne — <a href="mentions-legales.html" style="color:#4A5E55;text-decoration:underline">Mentions légales</a> · <a href="politique-cookies.html" style="color:#4A5E55;text-decoration:underline">Politique cookies</a></p>
-  </div>
-</footer>
+<div id="footer-placeholder"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
@@ -749,14 +713,26 @@ function compute(){
 }
 
 // Sliders → compute
+const sliderLabels={capital:'Argent de départ',monthly:'Versement mensuel',rate:'Rendement annuel',years:'Durée'};
+const sliderTimers={};
 ['capital','monthly','rate','years'].forEach(id=>{
   document.getElementById(id).addEventListener('input',()=>{
-    // Mirror slider value to its input field
     const map={capital:'capital-input',monthly:'monthly-input',rate:'rate-input',years:'years-input'};
     const inp=document.getElementById(map[id]);
     const v=+document.getElementById(id).value;
     inp.value = id==='rate' ? v.toFixed(1) : v;
     compute();
+    // Throttle : envoie l'event 800ms après que l'utilisateur arrête de glisser
+    clearTimeout(sliderTimers[id]);
+    sliderTimers[id]=setTimeout(()=>{
+      window.dataLayer=window.dataLayer||[];
+      dataLayer.push({
+        event:'simulator_interaction',
+        slider_name:sliderLabels[id],
+        slider_id:id,
+        slider_value:v
+      });
+    },800);
   });
 });
 

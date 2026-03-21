@@ -7,6 +7,7 @@
 <meta name="description" content="Politique de cookies de Simule Épargne — quels cookies sont utilisés, pourquoi, et comment les gérer.">
 <meta name="robots" content="noindex, follow">
 <link rel="canonical" href="https://simulepargne.com/politique-cookies.html">
+<link rel="stylesheet" href="/shared.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -24,9 +25,9 @@ a:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:2
 a{color:var(--sage);text-underline-offset:3px}
 a:hover{color:var(--gold)}
 nav{background:var(--dark);padding:0 2.5rem;height:52px;display:flex;align-items:center;gap:2rem}
-.nav-brand{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#E8DDD0;text-decoration:none}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#1C3A2F;text-decoration:none}
 .nav-brand span{color:var(--gold)}
-.nav-back{font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:#C8BFA8;text-decoration:none;margin-left:auto;transition:color .2s}
+.nav-back{font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:#5A5248;text-decoration:none;margin-left:auto;transition:color .2s}
 .nav-back:hover{color:var(--gold)}
 .wrap{max-width:680px;margin:0 auto;padding:3rem 2rem 5rem}
 .tag{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
@@ -67,14 +68,11 @@ footer{background:var(--dark);padding:2rem;text-align:center}
 .foot-links a{font-size:12px;color:#7A7060;text-decoration:none}
 .foot-links a:hover{color:#C8BFA8}
 </style>
+<script src="/shared.js" defer></script>
 </head>
 <body>
 
-<nav>
-  <a class="nav-brand" href="index.html">Simule<span> Épargne</span></a>
-  <a class="nav-back" href="index.html">← Retour à l'accueil</a>
-</nav>
-
+<div id="nav-placeholder"></div>
 <main class="wrap">
   <p class="tag">Confidentialité</p>
   <h1>Politique de cookies</h1>
@@ -170,15 +168,7 @@ footer{background:var(--dark);padding:2rem;text-align:center}
 
 </main>
 
-<footer>
-  <div class="foot-brand">Simule<span> Épargne</span></div>
-  <p class="foot-copy">© 2026 Simule Épargne — Tous droits réservés</p>
-  <div class="foot-links">
-    <a href="mentions-legales.html">Mentions légales</a>
-    <a href="politique-cookies.html">Cookies</a>
-    <a href="index.html">Accueil</a>
-  </div>
-</footer>
+<div id="footer-placeholder"></div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function getConsent(){return localStorage.getItem('se_cookie_consent')}

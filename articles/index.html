@@ -22,6 +22,7 @@
   "publisher": {"@type":"Organization","name":"Simule Épargne","url":"https://simulepargne.com"}
 }
 </script>
+<link rel="stylesheet" href="/shared.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -38,14 +39,14 @@ body{font-family:'DM Sans',sans-serif;background:#F7F3EC;color:#1C3A2F;font-size
 a:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:2px}
 
 /* NAV */
-nav{background:var(--dark);padding:0 2.5rem;height:56px;display:flex;align-items:center;gap:2rem;position:sticky;top:0;z-index:100}
-.nav-brand{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:#E8DDD0;text-decoration:none;flex-shrink:0}
+nav{background:#F7F3EC;padding:0 2.5rem;height:58px;display:flex;align-items:center;gap:2rem;position:sticky;top:0;z-index:100;border-bottom:1px solid #C8BFA8}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:#1C3A2F;text-decoration:none;flex-shrink:0}
 .nav-brand span{color:var(--gold)}
 .nav-links{display:flex;gap:1.5rem;flex:1;justify-content:center}
-.nav-links a{font-size:11px;letter-spacing:.9px;text-transform:uppercase;color:#C8BFA8;text-decoration:none;transition:color .2s}
+.nav-links a{font-size:11px;letter-spacing:.9px;text-transform:uppercase;color:#5A5248;text-decoration:none;transition:color .2s}
 .nav-links a:hover,.nav-links a.active{color:var(--gold)}
-.nav-home{font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:#C8BFA8;text-decoration:none;flex-shrink:0;transition:color .2s}
-.nav-home:hover{color:#E8DDD0}
+.nav-home{font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:#5A5248;text-decoration:none;flex-shrink:0;transition:color .2s}
+.nav-home:hover{color:#1C3A2F}
 @media(max-width:600px){.nav-links{display:none}}
 
 /* HERO */
@@ -109,20 +110,11 @@ footer{background:var(--dark);padding:2.5rem;text-align:center;border-top:1px so
   nav{padding:0 1.5rem}
 }
 </style>
+<script src="/shared.js" defer></script>
 </head>
 <body>
 
-<nav role="navigation" aria-label="Navigation principale">
-  <a class="nav-brand" href="../index.html">Simule<span> Épargne</span></a>
-  <div class="nav-links">
-    <a href="../index.html#simulateur">Simulateur</a>
-    <a href="../index.html#budget">50/30/20</a>
-    <a href="../index.html#enveloppes">Où placer ?</a>
-    <a href="index.html" class="active">Articles</a>
-  </div>
-  <a class="nav-home" href="../index.html">← Accueil</a>
-</nav>
-
+<div id="nav-placeholder"></div>
 <div class="page-hero">
   <p class="eyebrow" aria-hidden="true">Nos articles</p>
   <h1>Ce qu'on a appris —<br>et qu'on <em>partage</em></h1>
@@ -183,25 +175,7 @@ footer{background:var(--dark);padding:2.5rem;text-align:center;border-top:1px so
   </div>
 </div>
 
-<div class="newsletter" aria-label="Inscription à la newsletter">
-  <div class="newsletter-inner">
-    <div>
-      <h2>Prochain article dans votre boîte</h2>
-      <p>On publie régulièrement — uniquement des contenus utiles, jamais de spam.</p>
-    </div>
-    <div class="newsletter-form">
-      <input type="email" class="newsletter-input" placeholder="votre@email.fr" aria-label="Votre adresse email">
-      <button class="newsletter-btn" type="button">S'inscrire</button>
-    </div>
-  </div>
-</div>
-
-<footer role="contentinfo">
-  <a class="foot-brand" href="../index.html">Simule<span> Épargne</span></a>
-  <a class="foot-link" href="../index.html">← Retour au simulateur</a>
-  <p class="foot-disc">Simule Épargne est un projet indépendant. Contenu éducatif uniquement — ne constitue pas un conseil en investissement.</p>
-  <p style="font-size:11px;color:#4A5E55;margin-top:.75rem">© 2026 Simule Épargne — <a href="../mentions-legales.html" style="color:#4A5E55;text-decoration:underline">Mentions légales</a> · <a href="../politique-cookies.html" style="color:#4A5E55;text-decoration:underline">Cookies</a></p>
-</footer>
+<div id="footer-placeholder"></div>
 
 <script>
 // Filtres catégorie
@@ -223,6 +197,24 @@ document.querySelectorAll('.filter-btn').forEach(btn=>{
     });
   });
 });
+// Mobile menu
+const mobileBtn=document.getElementById('nav-mobile-btn');
+const mobilePanel=document.getElementById('nav-mobile-panel');
+if(mobileBtn&&mobilePanel){
+  mobileBtn.addEventListener('click',()=>{
+    const isOpen=mobilePanel.classList.toggle('open');
+    mobileBtn.setAttribute('aria-expanded',isOpen?'true':'false');
+    mobileBtn.querySelector('svg').innerHTML=isOpen
+      ?'<line x1="3" y1="6" x2="21" y2="18"/><line x1="3" y1="18" x2="21" y2="6"/>'
+      :'<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>';
+  });
+  mobilePanel.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{
+      mobilePanel.classList.remove('open');
+      mobileBtn.setAttribute('aria-expanded','false');
+    });
+  });
+}
 </script>
 </body>
 </html>

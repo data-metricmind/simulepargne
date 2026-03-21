@@ -24,6 +24,7 @@
   "datePublished": "2026-03-01"
 }
 </script>
+<link rel="stylesheet" href="/shared.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -40,7 +41,7 @@ html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:#F7F3EC;color:#1C3A2F;line-height:1.7;font-size:16px}
 a:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:2px}
 nav{background:var(--dark);padding:0 2rem;height:52px;display:flex;align-items:center;justify-content:space-between}
-.nav-brand{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#E8DDD0;text-decoration:none}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#1C3A2F;text-decoration:none}
 .nav-brand span{color:var(--gold)}
 .nav-back{font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:#C8BFA8;text-decoration:none;transition:color .2s}
 .nav-back:hover{color:var(--gold)}
@@ -103,12 +104,10 @@ footer{background:var(--dark);padding:2rem;text-align:center}
   .btn-ghost{display:block;margin-left:0;margin-top:.75rem}
 }
 </style>
+<script src="/shared.js" defer></script>
 </head>
 <body>
-<nav>
-  <a class="nav-brand" href="../index.html">Simule<span> Épargne</span></a>
-  <a class="nav-back" href="../index.html">← Retour à l'accueil</a>
-</nav>
+<div id="nav-placeholder"></div>
 <main class="wrap">
   <p class="tag">Épargne & simulation</p>
   <h1>Combien rapporte <em>200€ par mois</em><br>en 20 ans ?</h1>
@@ -227,10 +226,6 @@ footer{background:var(--dark);padding:2rem;text-align:center}
 
   <p class="disclaimer">Ce contenu est partagé à titre informatif et pédagogique. Les chiffres sont des estimations basées sur un taux constant — les rendements réels varient chaque année et ne sont pas garantis. Ce n'est pas un conseil financier. Pour une stratégie personnalisée, consultez un professionnel agréé.</p>
 </main>
-<footer>
-  <a class="foot-brand nav-brand" href="../index.html">Simule<span> Épargne</span></a>
-  <a class="foot-link" href="../index.html">← Retour à l'accueil</a>
-  <p style="font-size:11px;color:#4A5E55;margin-top:.75rem">© 2026 Simule Épargne — <a href="../mentions-legales.html" style="color:#4A5E55;text-decoration:underline">Mentions légales</a></p>
-</footer>
+<div id="footer-placeholder"></div>
 </body>
 </html>

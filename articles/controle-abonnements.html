@@ -28,6 +28,7 @@
   "datePublished": "2026-03-01"
 }
 </script>
+<link rel="stylesheet" href="/shared.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -47,12 +48,28 @@ html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:#F7F3EC;color:#1C3A2F;line-height:1.7;font-size:16px}
 
 /* ── NAV ── */
-nav{background:var(--forest);padding:0 2rem;height:52px;display:flex;align-items:center;justify-content:space-between}
-.nav-brand{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--white);text-decoration:none}
-.nav-brand span{color:var(--gold)}
-/* RGAA : ratio 4.5:1 min — #E8DDD0 sur #1C3A2F = 5.2:1 ✓ */
-.nav-back{font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:#E8DDD0;text-decoration:none;transition:color .2s}
-.nav-back:hover{color:var(--gold)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;gap:2rem;padding:0 2.5rem;height:58px;background:#F7F3EC;border-bottom:1px solid #C8BFA8}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:#1C3A2F;text-decoration:none;letter-spacing:.3px;flex-shrink:0}
+.nav-brand span{color:#B8975A}
+.nav-links{display:flex;gap:1.5rem;align-items:center;flex:1;justify-content:center}
+.nav-links a{font-size:11px;letter-spacing:.9px;text-transform:uppercase;color:#5A5248;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:#1C3A2F}
+.nav-links a.nav-articles{color:#B8975A}
+.nav-links a.nav-articles:hover{color:#D4B882}
+.nav-cta{background:#B8975A;color:#1C3A2F;font-size:11px;letter-spacing:.8px;text-transform:uppercase;padding:8px 18px;text-decoration:none;transition:background .2s;border-radius:2px;flex-shrink:0;font-weight:500}
+.nav-cta:hover{background:#D4B882}
+.nav-mobile-btn{display:none;background:none;border:none;cursor:pointer;padding:4px;color:#1C3A2F;margin-left:auto;flex-shrink:0}
+.nav-mobile-btn svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2}
+.nav-mobile-panel{position:fixed;top:58px;left:0;right:0;background:#F7F3EC;border-bottom:1px solid #C8BFA8;padding:1rem 2.5rem;z-index:99;flex-direction:column;gap:.75rem;display:none !important}
+.nav-mobile-panel.open{display:flex !important}
+.nav-mobile-panel a{font-size:13px;letter-spacing:.8px;text-transform:uppercase;color:#5A5248;text-decoration:none;padding:.5rem 0;border-bottom:1px solid #C8BFA8}
+.nav-mobile-panel a:last-child{border-bottom:none;color:#B8975A}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-mobile-btn{display:block}
+  nav{padding:0 1.5rem}
+  .nav-cta{display:none}
+}
 
 /* ── LAYOUT ── */
 .article-wrap{max-width:680px;margin:0 auto;padding:3rem 2rem 5rem}
@@ -126,7 +143,6 @@ nav{background:var(--forest);padding:0 2rem;height:52px;display:flex;align-items
 /* ── DISCLAIMER ── */
 .disclaimer{font-size:12px;color:#5A5248;line-height:1.7;padding-top:2rem;margin-top:2rem;border-top:1px solid var(--border)}
 
-/* ── FOOTER ── */
 footer{background:#0D1F18;padding:2rem;text-align:center}
 .foot-brand{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;color:#E8DDD0}
 .foot-brand span{color:var(--gold)}
@@ -138,14 +154,11 @@ footer{background:#0D1F18;padding:2rem;text-align:center}
   .cta-block .btn-cta-ghost{display:block;margin-left:0;margin-top:.75rem}
 }
 </style>
+<script src="/shared.js" defer></script>
 </head>
 <body>
 
-<nav>
-  <a class="nav-brand" href="../index.html">Simule<span> Épargne</span></a>
-  <a class="nav-back" href="../index.html">← Retour à l'accueil</a>
-</nav>
-
+<div id="nav-placeholder"></div>
 <main class="article-wrap">
 
   <p class="article-tag">Budget & abonnements</p>
@@ -267,11 +280,7 @@ footer{background:#0D1F18;padding:2rem;text-align:center}
   </div>
 </main>
 
-<footer>
-  <a class="nav-brand foot-brand" href="../index.html">Simule<span> Épargne</span></a>
-  <a class="foot-link" href="../index.html">← Retour à l'accueil</a>
-  <p style="font-size:11px;color:#4A5E55;margin-top:.75rem">© 2026 Simule Épargne — <a href="../mentions-legales.html" style="color:#4A5E55;text-decoration:underline">Mentions légales</a></p>
-</footer>
+<div id="footer-placeholder"></div>
 
 <script>
 const fmtEur = n => new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n);
@@ -317,6 +326,24 @@ document.getElementById('add-row').addEventListener('click',()=>{
   row.querySelector('input[type=number]').addEventListener('input',updateCalc);
   row.querySelector('input[type=text]').focus();
 });
+// Mobile menu
+const mobileBtn=document.getElementById('nav-mobile-btn');
+const mobilePanel=document.getElementById('nav-mobile-panel');
+if(mobileBtn&&mobilePanel){
+  mobileBtn.addEventListener('click',()=>{
+    const isOpen=mobilePanel.classList.toggle('open');
+    mobileBtn.setAttribute('aria-expanded',isOpen?'true':'false');
+    mobileBtn.querySelector('svg').innerHTML=isOpen
+      ?'<line x1="3" y1="6" x2="21" y2="18"/><line x1="3" y1="18" x2="21" y2="6"/>'
+      :'<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>';
+  });
+  mobilePanel.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{
+      mobilePanel.classList.remove('open');
+      mobileBtn.setAttribute('aria-expanded','false');
+    });
+  });
+}
 </script>
 </body>
 </html>
