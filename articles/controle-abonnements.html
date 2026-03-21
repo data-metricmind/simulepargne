@@ -154,11 +154,30 @@ footer{background:#0D1F18;padding:2rem;text-align:center}
   .cta-block .btn-cta-ghost{display:block;margin-left:0;margin-top:.75rem}
 }
 </style>
-<script src="/shared.js" defer></script>
 </head>
 <body>
 
-<div id="nav-placeholder"></div>
+<nav role="navigation" aria-label="Navigation principale">
+  <a class="nav-brand" href="../index.html">Simule<span> Épargne</span></a>
+  <div class="nav-links">
+    <a href="../index.html#simulateur">Simulateur</a>
+    <a href="../index.html#budget">50/30/20</a>
+    <a href="../index.html#enveloppes">Où placer ?</a>
+    <a href="../index.html#faq">FAQ</a>
+    <a href="../articles/index.html" class="nav-articles">Articles</a>
+  </div>
+  <button class="nav-mobile-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-mobile-panel" id="nav-mobile-btn">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <a class="nav-cta" href="../index.html#simulateur">Simuler</a>
+</nav>
+<div class="nav-mobile-panel" id="nav-mobile-panel" role="navigation" aria-label="Menu mobile">
+  <a href="../index.html#simulateur">Simulateur</a>
+  <a href="../index.html#budget">50/30/20</a>
+  <a href="../index.html#enveloppes">Où placer ?</a>
+  <a href="../index.html#faq">FAQ</a>
+  <a href="../articles/index.html">Articles →</a>
+</div>
 <main class="article-wrap">
 
   <p class="article-tag">Budget & abonnements</p>
@@ -281,7 +300,21 @@ footer{background:#0D1F18;padding:2rem;text-align:center}
   </div>
 </main>
 
-<div id="footer-placeholder"></div>
+<footer role="contentinfo">
+  <div class="foot-inner">
+    <div class="foot-brand">Simule<span> Épargne</span></div>
+    <p class="foot-tagline">Comprendre l'épargne, gratuitement, pour tous</p>
+    <p class="foot-about">Simule Épargne est un projet indépendant. On n'est pas conseillers financiers — on partage ce qu'on a appris sur l'épargne, en langage simple.</p>
+    <nav class="foot-nav" aria-label="Navigation footer">
+      <a href="../index.html#simulateur">Simulateur</a>
+      <a href="../index.html#budget">50/30/20</a>
+      <a href="../index.html#enveloppes">Où placer ?</a>
+      <a href="../articles/index.html">Articles</a>
+    </nav>
+    <p class="foot-disc">Ce site est éducatif et ne constitue pas un conseil en investissement. Les simulations sont données à titre indicatif. Pour toute décision financière, consultez un professionnel agréé.</p>
+    <p class="foot-copy">© 2026 Simule Épargne — <a href="../mentions-legales.html">Mentions légales</a> · <a href="../politique-cookies.html">Politique cookies</a></p>
+  </div>
+</footer>
 
 <script>
 const fmtEur = n => new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n);
