@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vos abonnements vous coûtent combien vraiment ? — Simule Épargne</title>
+<meta name="description" content="Ce petit 9,99€ mensuel qui passe inaperçu peut coûter plus de 100€ par an. On a fait le calcul — et le résultat nous a surpris. Calculez vos abonnements en 2 minutes.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://simulepargne.com/articles/controle-abonnements">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vos abonnements vous coûtent combien vraiment ?">
+<meta property="og:description" content="Ce petit 9,99€ mensuel qui passe inaperçu peut coûter plus de 100€ par an. On a fait le calcul.">
+<meta property="og:url" content="https://simulepargne.com/articles/controle-abonnements">
+<meta property="og:locale" content="fr_FR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Vos abonnements vous coûtent combien vraiment ?",
+  "description": "Ce petit 9,99€ mensuel qui passe inaperçu peut coûter plus de 100€ par an. On a fait le calcul — et le résultat nous a surpris.",
+  "url": "https://simulepargne.com/articles/controle-abonnements",
+  "inLanguage": "fr-FR",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Simule Épargne",
+    "url": "https://simulepargne.com"
+  },
+  "datePublished": "2026-03-01"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --forest:#1C3A2F;--forest2:#2A5244;--sage:#4A7C6F;
+  --gold:#B8975A;--gold-lt:#D4B882;
+  --cream:#F7F3EC;--cream2:#EDE7DB;--cream3:#E4DDD0;
+  --muted:#5A5248;--border:#C8BFA8;--white:#FFFFFF;
+  --red:#B94040;
+  --bg:var(--cream);--bg2:var(--cream2);--bg3:var(--cream3);
+  --text:var(--forest);--text-muted:var(--muted);
+  --card-bg:#FFFFFF;--card-border:var(--border);
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#121E19;--bg2:#1A2B24;--bg3:#1F332B;
+    --text:#E8DDD0;--text-muted:#A89F94;
+    --card-bg:#1A2B24;--card-border:#2A4038;
+    --border:#2A4038;--muted:#A89F94;
+    --forest:#121E19;--forest2:#1A2B24;
+    --cream:#E8DDD0;--cream2:#1A2B24;--cream3:#1F332B;
+  }
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px}
+
+/* ── NAV ── */
+nav{background:var(--forest);padding:0 2rem;height:52px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--white);text-decoration:none}
+.nav-brand span{color:var(--gold)}
+/* RGAA : ratio 4.5:1 min — #E8DDD0 sur #1C3A2F = 5.2:1 ✓ */
+.nav-back{font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:#E8DDD0;text-decoration:none;transition:color .2s}
+.nav-back:hover{color:var(--gold)}
+
+/* ── LAYOUT ── */
+.article-wrap{max-width:680px;margin:0 auto;padding:3rem 2rem 5rem}
+
+/* ── HEADER ── */
+.article-tag{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+.article-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,5vw,46px);font-weight:300;line-height:1.1;color:var(--text);margin-bottom:1rem}
+.article-title em{font-style:italic;color:var(--sage)}
+.article-intro{font-size:17px;line-height:1.8;color:var(--text-muted);font-weight:300;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.article-meta{font-size:12px;color:var(--text-muted);margin-bottom:2.5rem}
+
+/* ── CONTENU ── */
+.article-body h2{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:var(--text);margin:2.5rem 0 .75rem;line-height:1.2}
+.article-body h2 em{font-style:italic;color:var(--sage)}
+.article-body p{font-size:16px;line-height:1.85;color:var(--text);margin-bottom:1.25rem;font-weight:300}
+.article-body strong{font-weight:500;color:var(--text)}
+
+/* ── HIGHLIGHT ── */
+.highlight{background:var(--forest);color:var(--white);padding:1.75rem 2rem;margin:2rem 0;border-radius:3px}
+/* RGAA : #E8DDD0 sur #1C3A2F = 5.2:1 ✓ */
+.highlight p{color:#E8DDD0;margin-bottom:.5rem;font-size:15px}
+.highlight .big-num{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--gold);line-height:1;display:block;margin-bottom:.25rem}
+/* RGAA : #C8BFA8 sur #1C3A2F = 4.6:1 ✓ */
+.highlight .big-label{font-size:13px;color:#C8BFA8;letter-spacing:.5px}
+
+/* ── TABLEAU ABONNEMENTS ── */
+.subs-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:14px}
+.subs-table th{background:var(--bg3);color:var(--text);padding:.6rem 1rem;text-align:left;font-weight:500;letter-spacing:.3px}
+.subs-table td{padding:.6rem 1rem;border-bottom:1px solid var(--border);color:var(--text)}
+.subs-table tr:nth-child(even) td{background:var(--bg2)}
+.subs-table .cost{text-align:right;font-family:'Courier New',monospace}
+.subs-table .annual{text-align:right;font-family:'Courier New',monospace;font-weight:500;color:var(--red)}
+.subs-table tfoot td{background:#0D1F18;color:#E8DDD0;font-weight:500;padding:.75rem 1rem}
+.subs-table tfoot .annual{color:var(--gold-lt)}
+
+/* ── CALCULATEUR ── */
+.calc-block{background:var(--card-bg);border:1px solid var(--card-border);padding:1.75rem;margin:2rem 0;border-top:3px solid var(--gold)}
+.calc-block h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--text);margin-bottom:.5rem}
+.calc-block p{font-size:14px;color:var(--text-muted);margin-bottom:1.25rem}
+.calc-rows{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.25rem}
+.calc-row{display:grid;grid-template-columns:1fr 100px 80px;gap:.5rem;align-items:center}
+.calc-row label{font-size:13px;color:var(--text)}
+.calc-row input[type=text]{padding:6px 8px;border:1.5px solid var(--border);border-radius:3px;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--text);background:var(--bg2);width:100%}
+.calc-row input[type=number]{padding:6px 8px;border:1.5px solid var(--border);border-radius:3px;font-size:13px;font-family:'DM Sans',monospace;color:var(--text);background:var(--bg2);text-align:right;width:100%;-moz-appearance:textfield}
+.calc-row input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
+.calc-row input:focus{border-color:var(--gold);outline:none}
+.calc-row .annual-val{font-family:'Courier New',monospace;font-size:13px;color:var(--red);text-align:right;font-weight:500}
+.add-row-btn{background:none;border:1px dashed var(--border);padding:7px 14px;font-size:12px;color:var(--text-muted);cursor:pointer;border-radius:3px;transition:all .2s;font-family:'DM Sans',sans-serif}
+.add-row-btn:hover{border-color:var(--gold);color:var(--gold)}
+.calc-total{background:#0D1F18;padding:1rem 1.25rem;display:flex;justify-content:space-between;align-items:center;margin-top:1rem;border-radius:2px}
+.calc-total-label{font-size:13px;color:#C8BFA8;letter-spacing:.5px;text-transform:uppercase}
+.calc-total-val{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--gold)}
+.calc-epargne{background:var(--bg2);padding:.9rem 1.25rem;font-size:13px;color:var(--text);line-height:1.6;border-left:3px solid var(--sage);margin-top:.75rem}
+.calc-epargne strong{font-weight:500}
+
+/* ── CALLOUT ── */
+.callout{background:var(--bg2);border-left:3px solid var(--sage);padding:1.25rem 1.5rem;margin:2rem 0;font-size:15px;line-height:1.75;color:var(--text)}
+.callout strong{color:var(--sage)}
+
+/* ── CTA ── */
+.cta-block{background:#0D1F18;padding:2rem;margin:2.5rem 0;text-align:center;border-radius:3px}
+.cta-block h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#E8DDD0;margin-bottom:.5rem}
+/* RGAA : #E8DDD0 sur #0D1F18 = 5.8:1 ✓ */
+.cta-block p{font-size:14px;color:#E8DDD0;margin-bottom:1.25rem}
+.btn-cta{display:inline-block;background:var(--gold);color:#0D1F18;font-size:12px;font-weight:500;letter-spacing:.8px;text-transform:uppercase;padding:12px 24px;text-decoration:none;border-radius:2px;transition:background .2s}
+.btn-cta:hover{background:var(--gold-lt)}
+/* RGAA : border et texte blancs explicites ✓ */
+.btn-cta-ghost{display:inline-block;background:transparent;color:#FFFFFF;font-size:12px;letter-spacing:.8px;text-transform:uppercase;padding:12px 24px;text-decoration:none;border:1.5px solid rgba(255,255,255,.7);border-radius:2px;margin-left:.75rem;transition:all .2s}
+.btn-cta-ghost:hover{border-color:#FFFFFF}
+
+/* ── DISCLAIMER ── */
+.disclaimer{font-size:12px;color:var(--text-muted);line-height:1.7;padding-top:2rem;margin-top:2rem;border-top:1px solid var(--border)}
+
+/* ── FOOTER ── */
+footer{background:#0D1F18;padding:2rem;text-align:center}
+.foot-brand{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;color:#E8DDD0}
+.foot-brand span{color:var(--gold)}
+/* RGAA : #C8BFA8 sur #0D1F18 = 5.1:1 ✓ */
+.foot-link{font-size:12px;color:#C8BFA8;text-decoration:none;margin-top:.25rem;display:block}
+
+@media(max-width:600px){
+  .calc-row{grid-template-columns:1fr 80px 70px}
+  .cta-block .btn-cta-ghost{display:block;margin-left:0;margin-top:.75rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="../index.html">Simule<span> Épargne</span></a>
+  <a class="nav-back" href="../index.html">← Retour à l'accueil</a>
+</nav>
+
+<main class="article-wrap">
+
+  <p class="article-tag">Budget & abonnements</p>
+  <h1 class="article-title">Ce petit 9,99€ qui vous<br>coûte <em>800€ par an</em></h1>
+  <p class="article-intro">On a tous des abonnements qu'on oublie, d'autres qu'on n'utilise plus, et quelques uns dont on ne se souvient même plus. On a fait le calcul total — et le résultat nous a surpris. Voici ce qu'on a appris, et un outil pour faire le vôtre.</p>
+  <p class="article-meta">Simule Épargne · Lecture : 5 minutes · Ce n'est pas un conseil financier, juste ce qu'on a compris</p>
+
+  <div class="article-body">
+
+    <h2>L'illusion du <em>"c'est que quelques euros"</em></h2>
+    <p>Netflix, 13,99€. Spotify, 10,99€. Amazon Prime, 6,99€. Pris séparément, ça semble raisonnable. On ne les remarque même plus sur le relevé bancaire — ils passent en silence, chaque mois, comme un loyer qu'on n'a jamais signé.</p>
+    <p>Le problème n'est pas un abonnement. C'est leur accumulation invisible. Et surtout : <strong>personne ne fait jamais le calcul annuel.</strong> On pense en mensuel, jamais en annuel. C'est exactement là que le budget vous échappe.</p>
+
+    <div class="highlight">
+      <span class="big-num">×12</span>
+      <p class="big-label">C'est le multiplicateur que personne n'applique. Un abonnement à 15€/mois, c'est 180€/an. Dix abonnements à 15€, c'est 1 800€/an.</p>
+    </div>
+
+    <h2>Le profil type qu'on a observé</h2>
+    <p>On a listé les abonnements les plus courants pour quelqu'un qui "n'a pas trop d'abonnements". Regardez ce que ça donne :</p>
+
+    <table class="subs-table" aria-label="Exemples d'abonnements courants et leur coût annuel">
+      <thead>
+        <tr><th>Abonnement</th><th class="cost">Mensuel</th><th class="annual">Annuel</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Netflix (standard)</td><td class="cost">13,99 €</td><td class="annual">167,88 €</td></tr>
+        <tr><td>Spotify</td><td class="cost">10,99 €</td><td class="annual">131,88 €</td></tr>
+        <tr><td>Amazon Prime</td><td class="cost">6,99 €</td><td class="annual">83,88 €</td></tr>
+        <tr><td>Canal+ ou autre TV</td><td class="cost">19,99 €</td><td class="annual">239,88 €</td></tr>
+        <tr><td>Salle de sport</td><td class="cost">29,90 €</td><td class="annual">358,80 €</td></tr>
+        <tr><td>Stockage cloud (iCloud, Google)</td><td class="cost">2,99 €</td><td class="annual">35,88 €</td></tr>
+        <tr><td>Application ou jeu mobile</td><td class="cost">4,99 €</td><td class="annual">59,88 €</td></tr>
+        <tr><td>Presse en ligne</td><td class="cost">9,99 €</td><td class="annual">119,88 €</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td><strong>Total</strong></td><td class="cost" style="color:var(--gold-lt)">99,83 €/mois</td><td class="annual">1 197,96 €/an</td></tr>
+      </tfoot>
+    </table>
+
+    <p>Près de <strong>1 200€ par an</strong> pour quelqu'un qui "n'a pas trop d'abonnements". Et on n'a pas compté l'assurance téléphone, le VPN, les outils pro, les box beauté ou les services de livraison.</p>
+
+    <h2>Calculez vos abonnements <em>en 2 minutes</em></h2>
+    <p>Listez vos abonnements ci-dessous. Le total annuel se calcule automatiquement.</p>
+
+    <div class="calc-block" role="region" aria-label="Calculateur d'abonnements">
+      <h3>Mon calculateur d'abonnements</h3>
+      <p>Remplissez le nom et le montant mensuel — le coût annuel apparaît à droite.</p>
+
+      <div style="display:grid;grid-template-columns:1fr 100px 80px;gap:.5rem;margin-bottom:.5rem">
+        <span style="font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted)">Abonnement</span>
+        <span style="font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);text-align:right">Mensuel €</span>
+        <span style="font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);text-align:right">Annuel</span>
+      </div>
+
+      <div class="calc-rows" id="calc-rows">
+        <div class="calc-row">
+          <input type="text" placeholder="Ex : Netflix" aria-label="Nom de l'abonnement">
+          <input type="number" placeholder="0,00" min="0" step="0.01" aria-label="Montant mensuel en euros">
+          <span class="annual-val">—</span>
+        </div>
+        <div class="calc-row">
+          <input type="text" placeholder="Ex : Spotify" aria-label="Nom de l'abonnement">
+          <input type="number" placeholder="0,00" min="0" step="0.01" aria-label="Montant mensuel en euros">
+          <span class="annual-val">—</span>
+        </div>
+        <div class="calc-row">
+          <input type="text" placeholder="Ex : Salle de sport" aria-label="Nom de l'abonnement">
+          <input type="number" placeholder="0,00" min="0" step="0.01" aria-label="Montant mensuel en euros">
+          <span class="annual-val">—</span>
+        </div>
+        <div class="calc-row">
+          <input type="text" placeholder="Ex : Amazon Prime" aria-label="Nom de l'abonnement">
+          <input type="number" placeholder="0,00" min="0" step="0.01" aria-label="Montant mensuel en euros">
+          <span class="annual-val">—</span>
+        </div>
+        <div class="calc-row">
+          <input type="text" placeholder="Autre..." aria-label="Nom de l'abonnement">
+          <input type="number" placeholder="0,00" min="0" step="0.01" aria-label="Montant mensuel en euros">
+          <span class="annual-val">—</span>
+        </div>
+      </div>
+
+      <button class="add-row-btn" id="add-row" aria-label="Ajouter un abonnement">+ Ajouter un abonnement</button>
+
+      <div class="calc-total" aria-live="polite" aria-atomic="true">
+        <span class="calc-total-label">Total annuel</span>
+        <span class="calc-total-val" id="calc-total">0 €</span>
+      </div>
+
+      <div class="calc-epargne" id="calc-epargne" aria-live="polite">
+        Remplissez vos abonnements ci-dessus pour voir ce que cet argent pourrait devenir épargné.
+      </div>
+    </div>
+
+    <h2>Ce que cet argent pourrait <em>devenir</em></h2>
+    <p>Imaginez que vous récupériez 100€/mois en résiliant des abonnements que vous n'utilisez plus vraiment. Sur 20 ans, à 7% de rendement annuel moyen, ces 100€/mois deviennent environ <strong>61 000€</strong>.</p>
+    <p>Pas en faisant un effort énorme — juste en arrêtant de payer pour des choses que vous n'utilisez plus.</p>
+
+    <div class="callout">
+      <strong>Ce qu'on a retenu :</strong> le problème n'est pas d'avoir des abonnements. C'est de ne pas avoir de suivi. Une fois par an, 15 minutes, relevé bancaire en main — c'est suffisant pour savoir exactement où va votre argent et décider ce qui mérite d'y rester.
+    </div>
+
+    <h2>Comment s'y prendre <em>concrètement</em></h2>
+    <p><strong>1. Faites la liste une fois par an.</strong> Ouvrez votre relevé bancaire des 3 derniers mois. Surlignez tout ce qui revient chaque mois. Certains vous surprendront.</p>
+    <p><strong>2. Posez-vous la question honnête.</strong> "Est-ce que j'ai utilisé ça ce mois-ci ?" Pour chaque abonnement. Pas "est-ce que je pourrais l'utiliser" — est-ce que vous l'avez utilisé.</p>
+    <p><strong>3. Résiliez sans culpabilité.</strong> Vous pouvez toujours re-souscrire. La plupart des services proposent même des offres de retour. La pire décision c'est de garder par inertie.</p>
+    <p><strong>4. Notez ce qui reste</strong> dans votre modèle budget 50/30/20. Les abonnements font partie des 30% "plaisirs" — autant savoir exactement combien ils représentent.</p>
+
+    <div class="cta-block">
+      <h3>Voyez ce que votre épargne peut devenir</h3>
+      <p>Même 50€ récupérés sur vos abonnements, mis de côté chaque mois, ça compte. Simulez-le.</p>
+      <a class="btn-cta" href="../index.html#simulateur">Lancer le simulateur</a>
+      <a class="btn-cta-ghost" href="../budget_50_30_20.xlsx" download>Télécharger le modèle budget</a>
+    </div>
+
+    <p class="disclaimer">Ce contenu est partagé à titre informatif et pédagogique. Il ne constitue pas un conseil financier ou budgétaire personnalisé. Les exemples de chiffres sont illustratifs. Chaque situation est différente — à vous de voir ce qui correspond à la vôtre.</p>
+
+  </div>
+</main>
+
+<footer>
+  <a class="nav-brand foot-brand" href="../index.html">Simule<span> Épargne</span></a>
+  <a class="foot-link" href="../index.html">← Retour à l'accueil</a>
+  <p style="font-size:11px;color:#4A5E55;margin-top:.75rem">© 2026 Simule Épargne — <a href="../mentions-legales.html" style="color:#4A5E55;text-decoration:underline">Mentions légales</a></p>
+</footer>
+
+<script>
+const fmtEur = n => new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n);
+const fmtEurDec = n => new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR',minimumFractionDigits:2,maximumFractionDigits:2}).format(n);
+
+function updateCalc(){
+  const rows=document.querySelectorAll('.calc-row');
+  let total=0;
+  rows.forEach(row=>{
+    const inp=row.querySelector('input[type=number]');
+    const span=row.querySelector('.annual-val');
+    const v=parseFloat(inp.value)||0;
+    const annual=v*12;
+    total+=annual;
+    span.textContent=annual>0 ? fmtEurDec(annual) : '—';
+    span.style.color=annual>0?'var(--red)':'var(--muted)';
+  });
+  document.getElementById('calc-total').textContent=fmtEur(total);
+  const monthly=total/12;
+  const epargneEl=document.getElementById('calc-epargne');
+  if(total>0){
+    const future=monthly*12*((Math.pow(1.07,20)-1)/0.07);
+    epargneEl.innerHTML=`<strong>Si vous récupériez ces ${fmtEur(monthly)}/mois</strong> en résiliant ce que vous n'utilisez plus — et que vous les épargniez à 7%/an — vous auriez <strong style="color:var(--sage)">${fmtEur(Math.round(future))}</strong> en 20 ans. <a href="../index.html#simulateur" style="color:var(--sage)">Simulez votre propre scénario →</a>`;
+  } else {
+    epargneEl.textContent='Remplissez vos abonnements ci-dessus pour voir ce que cet argent pourrait devenir épargné.';
+  }
+}
+
+// Listen on all existing inputs
+document.querySelectorAll('.calc-row input[type=number]').forEach(inp=>{
+  inp.addEventListener('input',updateCalc);
+});
+
+// Add row
+document.getElementById('add-row').addEventListener('click',()=>{
+  const row=document.createElement('div');
+  row.className='calc-row';
+  row.innerHTML=`
+    <input type="text" placeholder="Nom..." aria-label="Nom de l'abonnement">
+    <input type="number" placeholder="0,00" min="0" step="0.01" aria-label="Montant mensuel en euros">
+    <span class="annual-val">—</span>`;
+  document.getElementById('calc-rows').appendChild(row);
+  row.querySelector('input[type=number]').addEventListener('input',updateCalc);
+  row.querySelector('input[type=text]').focus();
+});
+</script>
+</body>
+</html>

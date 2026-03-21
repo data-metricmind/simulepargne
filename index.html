@@ -74,6 +74,13 @@
   ]
 }
 </script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KXWQPM96');</script>
+<!-- End Google Tag Manager -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -87,6 +94,19 @@
   --cream:#F7F3EC;--cream2:#EDE7DB;--cream3:#E4DDD0;
   --muted:#5A5248;--border:#C8BFA8;--white:#FFFFFF;
   --focus:#B8975A;
+  --bg:var(--cream);--bg2:var(--cream2);--bg3:var(--cream3);
+  --text:var(--forest);--text-muted:var(--muted);
+  --dark:#0D1F18;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#121E19;--bg2:#1A2B24;--bg3:#1F332B;
+    --cream:#121E19;--cream2:#1A2B24;--cream3:#1F332B;
+    --text:#E8DDD0;--text-muted:#A89F94;
+    --muted:#A89F94;--border:#2A4038;
+    --forest:#121E19;--forest2:#1A2B24;
+    --dark:#0A1710;
+  }
 }
 
 /* ── Base ── */
@@ -102,14 +122,29 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 .skip-link:focus{top:1rem}
 
 /* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:58px;background:rgba(247,243,236,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.nav-brand{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--forest);text-decoration:none;letter-spacing:.3px}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;gap:2rem;padding:0 2.5rem;height:58px;background:rgba(247,243,236,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+@media(prefers-color-scheme:dark){nav{background:rgba(18,30,25,0.96)}}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:.3px;flex-shrink:0}
 .nav-brand span{color:var(--gold)}
-.nav-links{display:flex;gap:2rem}
-.nav-links a{font-size:11px;letter-spacing:.9px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
-.nav-links a:hover{color:var(--forest)}
-.nav-cta{background:var(--forest);color:var(--cream);font-size:11px;letter-spacing:.8px;text-transform:uppercase;padding:8px 18px;text-decoration:none;transition:background .2s;border-radius:2px}
-.nav-cta:hover{background:var(--forest2)}
+.nav-links{display:flex;gap:1.5rem;align-items:center;flex:1;justify-content:center}
+.nav-links a{font-size:11px;letter-spacing:.9px;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-links a.nav-articles{color:var(--gold)}
+.nav-links a.nav-articles:hover{color:var(--gold-lt)}
+.nav-cta{background:var(--dark);color:#E8DDD0;font-size:11px;letter-spacing:.8px;text-transform:uppercase;padding:8px 18px;text-decoration:none;transition:background .2s;border-radius:2px;flex-shrink:0}
+.nav-cta:hover{background:#1A2B24}
+/* Mobile menu */
+.nav-mobile-btn{display:none;background:none;border:none;cursor:pointer;padding:4px;color:var(--text);margin-left:auto}
+.nav-mobile-btn svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2}
+.nav-mobile-panel{display:none;position:fixed;top:58px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);padding:1rem 2.5rem;z-index:99;flex-direction:column;gap:.75rem}
+.nav-mobile-panel.open{display:flex}
+.nav-mobile-panel a{font-size:13px;letter-spacing:.8px;text-transform:uppercase;color:var(--text-muted);text-decoration:none;padding:.5rem 0;border-bottom:1px solid var(--border)}
+.nav-mobile-panel a:last-child{border-bottom:none;color:var(--gold)}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-mobile-btn{display:block}
+  nav{padding:0 1.5rem}
+}
 
 /* ── HERO ── */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:100px 2.5rem 4rem;position:relative;overflow:hidden}
@@ -152,8 +187,11 @@ input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 3px var(-
 .ctrl-free-input{
   width:80px;padding:5px 6px;border:1.5px solid var(--border);border-radius:3px;
   font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:var(--forest);
-  background:var(--cream);text-align:right;transition:border-color .2s;
+  background:#FFFFFF;text-align:right;transition:border-color .2s;
   -moz-appearance:textfield;
+}
+@media(prefers-color-scheme:dark){
+  .ctrl-free-input{background:#1F332B;color:#E8DDD0;border-color:#2A4038}
 }
 .ctrl-free-input--sm{width:52px}
 .ctrl-free-input::-webkit-inner-spin-button,.ctrl-free-input::-webkit-outer-spin-button{-webkit-appearance:none}
@@ -212,8 +250,8 @@ input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 3px var(-
 .steps{margin-top:2.5rem}
 .step{display:grid;grid-template-columns:52px 1fr;gap:1.75rem;padding:1.75rem 0;border-bottom:1px solid var(--border);align-items:start}
 .step:first-child{border-top:1px solid var(--border)}
-.step-n{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;color:var(--cream3);line-height:1}
-.step-title{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--forest);margin-bottom:.4rem}
+.step-n{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;color:var(--sage);line-height:1;opacity:.5}
+.step-title{font-family:'Cormorant Garamond',serif;font-size:19px;color:var(--forest);margin-bottom:.4rem;font-weight:400}
 .step-body{font-size:14px;line-height:1.8;color:var(--muted);font-weight:300}
 
 /* ── FAQ ── */
@@ -232,14 +270,27 @@ input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 3px var(-
 .faq-a p{font-size:15px;line-height:1.8;color:var(--muted);font-weight:300}
 
 /* ── FOOTER ── */
-footer{background:var(--forest);padding:3.5rem 2.5rem 2rem}
+footer{background:var(--dark);padding:3.5rem 2.5rem 2rem}
 .foot-inner{max-width:960px;margin:0 auto}
-.foot-brand{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--white)}
+.foot-brand{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#E8DDD0}
 .foot-brand span{color:var(--gold)}
-.foot-tagline{font-size:13px;color:rgba(247,243,236,.4);margin-top:.25rem}
-.foot-disc{font-size:11px;line-height:1.7;color:rgba(247,243,236,.35);max-width:620px;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.08)}
+.foot-tagline{font-size:13px;color:#A89F94;margin-top:.25rem}
+.foot-nav{display:flex;gap:2rem;flex-wrap:wrap;margin-top:1.5rem}
+.foot-nav a{font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:#C8BFA8;text-decoration:none;transition:color .2s}
+.foot-nav a:hover{color:var(--gold)}
+.foot-disc{font-size:11px;line-height:1.7;color:#7A7060;max-width:620px;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.08)}
 
-/* ── Animations ── */
+/* ── ARTICLES ── */
+#articles{background:var(--bg2)}
+.articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
+.article-card{background:var(--white);border:1px solid var(--border);padding:1.5rem;display:flex;flex-direction:column;text-decoration:none;transition:border-color .2s;border-top:3px solid var(--border)}
+@media(prefers-color-scheme:dark){.article-card{background:var(--bg3)}}
+.article-card:hover{border-top-color:var(--gold)}
+.article-card-tag{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+.article-card-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--text);line-height:1.25;margin-bottom:.6rem;flex:1}
+.article-card-desc{font-size:13px;color:var(--text-muted);line-height:1.6;font-weight:300;margin-bottom:1rem}
+.article-card-link{font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--sage);font-weight:500}
+@media(max-width:768px){.articles-grid{grid-template-columns:1fr}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
@@ -257,21 +308,36 @@ footer{background:var(--forest);padding:3.5rem 2.5rem 2rem}
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KXWQPM96"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- RGAA : lien d'évitement -->
 <a class="skip-link" href="#simulateur">Aller au contenu principal</a>
 
 <!-- NAV -->
 <nav role="navigation" aria-label="Navigation principale">
-  <a class="nav-brand" href="#" aria-label="Simule Épargne — retour à l'accueil">Simule<span> Épargne</span></a>
+  <a class="nav-brand" href="index.html" aria-label="Simule Épargne — retour à l'accueil">Simule<span> Épargne</span></a>
   <div class="nav-links" role="list">
     <a href="#simulateur" role="listitem">Simulateur</a>
     <a href="#budget" role="listitem">50/30/20</a>
     <a href="#enveloppes" role="listitem">Où placer ?</a>
     <a href="#faq" role="listitem">Questions</a>
+    <a href="articles/index.html" class="nav-articles" role="listitem">Articles</a>
   </div>
-  <a class="nav-cta" href="#simulateur" aria-label="Accéder au simulateur d'épargne">Simuler gratuitement</a>
+  <button class="nav-mobile-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-mobile-panel" id="nav-mobile-btn">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <a class="nav-cta" href="#simulateur" aria-label="Accéder au simulateur d'épargne">Simuler</a>
 </nav>
+<div class="nav-mobile-panel" id="nav-mobile-panel" role="navigation" aria-label="Menu mobile">
+  <a href="#simulateur">Simulateur</a>
+  <a href="#budget">50/30/20</a>
+  <a href="#enveloppes">Où placer ?</a>
+  <a href="#faq">Questions</a>
+  <a href="articles/index.html">Articles →</a>
+</div>
 
 <!-- HERO -->
 <section class="hero" aria-labelledby="hero-title">
@@ -499,36 +565,36 @@ footer{background:var(--forest);padding:3.5rem 2.5rem 2rem}
       <h2 class="sec-title" id="start-heading">Par où <em>commencer ?</em></h2>
       <p class="sec-lead">Cinq étapes dans l'ordre. Pas besoin d'avoir de l'argent, juste de commencer.</p>
     </div>
-    <ol class="steps reveal" aria-label="Étapes pour commencer à épargner">
-      <li class="step">
+    <ol class="steps" aria-label="Étapes pour commencer à épargner">
+      <li class="step reveal">
         <div class="step-n" aria-hidden="true">01</div>
         <div>
           <div class="step-title">Faites le point sur vos revenus et dépenses</div>
           <div class="step-body">Notez ce qui rentre, ce qui sort, ce qu'il reste. Le fichier Excel gratuit ci-dessus vous aide à le faire en 10 minutes. Pas de surprise, juste de la clarté.</div>
         </div>
       </li>
-      <li class="step">
+      <li class="step reveal">
         <div class="step-n" aria-hidden="true">02</div>
         <div>
           <div class="step-title">Mettez 3 mois de dépenses de côté</div>
           <div class="step-body">C'est votre filet de sécurité. Mettez cet argent sur un Livret A et n'y touchez que pour une vraie urgence. Sans ce coussin, le moindre imprévu vous oblige à piocher dans vos investissements.</div>
         </div>
       </li>
-      <li class="step">
+      <li class="step reveal">
         <div class="step-n" aria-hidden="true">03</div>
         <div>
           <div class="step-title">Jouez avec le simulateur</div>
           <div class="step-body">Entrez votre situation réelle. Voyez ce que 50€, 100€, 200€ par mois donnent dans 10, 20, 30 ans. Ça motive — et ça aide à choisir un montant réaliste.</div>
         </div>
       </li>
-      <li class="step">
+      <li class="step reveal">
         <div class="step-n" aria-hidden="true">04</div>
         <div>
           <div class="step-title">Ouvrez un PEA</div>
           <div class="step-body">Même avec 1€. Ce qui compte, c'est la date d'ouverture — le compteur fiscal des 5 ans démarre à ce moment-là. Attendre 6 mois de plus, c'est 6 mois perdus d'avantage fiscal.</div>
         </div>
       </li>
-      <li class="step">
+      <li class="step reveal">
         <div class="step-n" aria-hidden="true">05</div>
         <div>
           <div class="step-title">Programmez un virement automatique</div>
@@ -575,12 +641,53 @@ footer{background:var(--forest);padding:3.5rem 2.5rem 2rem}
   </div>
 </section>
 
+<!-- ARTICLES -->
+<section id="articles" aria-labelledby="articles-heading">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow" aria-hidden="true">Nos articles</p>
+      <h2 class="sec-title" id="articles-heading">Ce qu'on a <em>appris</em><br>et qu'on partage</h2>
+      <p class="sec-lead">Pas des conseils. Des tips, des chiffres, des choses qu'on aurait voulu savoir plus tôt.</p>
+    </div>
+    <div class="articles-grid reveal">
+      <a class="article-card" href="articles/controle-abonnements.html" aria-label="Lire l'article sur les abonnements">
+        <div class="article-card-tag">Budget</div>
+        <div class="article-card-title">Ce petit 9,99€ qui vous coûte 800€ par an</div>
+        <div class="article-card-desc">On a fait le calcul total de nos abonnements — et le résultat nous a surpris. Avec un outil pour faire le vôtre.</div>
+        <div class="article-card-link">Lire l'article →</div>
+      </a>
+      <a class="article-card" href="articles/combien-rapporte-200-euros-par-mois.html" aria-label="Lire l'article sur 200 euros par mois">
+        <div class="article-card-tag">Simulation</div>
+        <div class="article-card-title">Combien rapporte 200€ par mois en 20 ans ?</div>
+        <div class="article-card-desc">La réponse directe, les chiffres par taux et par montant, et pourquoi l'effet s'accélère avec le temps.</div>
+        <div class="article-card-link">Lire l'article →</div>
+      </a>
+      <a class="article-card" href="articles/pourquoi-commencer-jeune.html" aria-label="Lire l'article sur commencer jeune">
+        <div class="article-card-tag">Épargne & temps</div>
+        <div class="article-card-title">Pourquoi commencer à 25 ans change tout</div>
+        <div class="article-card-desc">Ce qu'on aurait voulu savoir plus tôt — et les chiffres qui montrent pourquoi chaque année compte.</div>
+        <div class="article-card-link">Lire l'article →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer role="contentinfo">
   <div class="foot-inner">
     <div class="foot-brand">Simule<span> Épargne</span></div>
     <p class="foot-tagline">Comprendre l'épargne, gratuitement, pour tous</p>
+    <p style="font-size:13px;color:#A89F94;margin-top:.75rem;max-width:480px;line-height:1.65">Simule Épargne est un projet indépendant. On n'est pas conseillers financiers — on partage ce qu'on a appris sur l'épargne, en langage simple, pour que tout le monde puisse visualiser et comprendre.</p>
+    <nav class="foot-nav" aria-label="Navigation footer">
+      <a href="#simulateur">Simulateur</a>
+      <a href="#budget">50/30/20</a>
+      <a href="#enveloppes">Où placer ?</a>
+      <a href="articles/index.html">Articles</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="politique-cookies.html">Cookies</a>
+    </nav>
     <p class="foot-disc">Ce site est éducatif et ne constitue pas un conseil en investissement. Les simulations sont données à titre indicatif et ne garantissent pas les performances futures. Aucune donnée personnelle n'est collectée ou enregistrée. Pour toute décision financière personnelle, consultez un professionnel agréé.</p>
+    <p style="font-size:11px;color:#4A5E55;margin-top:1rem">© 2026 Simule Épargne — Tous droits réservés</p>
   </div>
 </footer>
 
@@ -589,17 +696,24 @@ footer{background:var(--forest);padding:3.5rem 2.5rem 2rem}
 const fmt = n => new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n);
 let chart;
 
-function compute(){
-  const C=+document.getElementById('capital').value;
-  const m=+document.getElementById('monthly').value;
-  const r=+document.getElementById('rate').value/100;
-  const Y=+document.getElementById('years').value;
+function getVal(inputId, sliderId, isFloat){
+  const inp=document.getElementById(inputId);
+  const sld=document.getElementById(sliderId);
+  const v=isFloat ? parseFloat(inp.value) : parseInt(inp.value);
+  return isNaN(v) ? parseFloat(sld.value) : v;
+}
 
-  // Sync all free inputs
-  document.getElementById('capital-input').value=C;
-  document.getElementById('monthly-input').value=m;
-  document.getElementById('rate-input').value=(r*100).toFixed(1);
-  document.getElementById('years-input').value=Y;
+function compute(){
+  const C=getVal('capital-input','capital',false);
+  const m=getVal('monthly-input','monthly',false);
+  const r=getVal('rate-input','rate',true)/100;
+  const Y=getVal('years-input','years',false);
+
+  // Sync sliders to inputs (clamp to slider range)
+  document.getElementById('capital').value=Math.min(50000,Math.max(0,C));
+  document.getElementById('monthly').value=Math.min(2000,Math.max(0,m));
+  document.getElementById('rate').value=Math.min(15,Math.max(0.5,r*100));
+  document.getElementById('years').value=Math.min(40,Math.max(1,Y));
 
   // Update aria
   document.getElementById('capital').setAttribute('aria-valuenow',C);
@@ -646,23 +760,26 @@ function compute(){
   });
 }
 
-// Slider → compute
-['capital','monthly','rate','years'].forEach(id=>
-  document.getElementById(id).addEventListener('input',compute)
-);
-
-// Helper: sync a free input → its slider
-function syncInput(inputId, sliderId, min, max, isFloat){
-  const inp=document.getElementById(inputId);
-  const sld=document.getElementById(sliderId);
-  inp.addEventListener('input',()=>{
-    let v=isFloat ? parseFloat(inp.value)||min : parseInt(inp.value)||min;
-    v=Math.max(min, v);
-    sld.value=Math.min(parseFloat(sld.max), v);
+// Sliders → compute
+['capital','monthly','rate','years'].forEach(id=>{
+  document.getElementById(id).addEventListener('input',()=>{
+    // Mirror slider value to its input field
+    const map={capital:'capital-input',monthly:'monthly-input',rate:'rate-input',years:'years-input'};
+    const inp=document.getElementById(map[id]);
+    const v=+document.getElementById(id).value;
+    inp.value = id==='rate' ? v.toFixed(1) : v;
     compute();
   });
+});
+
+// Free inputs → compute
+function syncInput(inputId, sliderId, min, max, isFloat){
+  const inp=document.getElementById(inputId);
+  inp.addEventListener('input',()=>compute());
   inp.addEventListener('blur',()=>{
-    if(inp.value===''||isNaN(+inp.value)) inp.value=isFloat?(+sld.value).toFixed(1):sld.value;
+    let v=isFloat ? parseFloat(inp.value) : parseInt(inp.value);
+    if(isNaN(v)||v<min) v=min;
+    inp.value=isFloat ? v.toFixed(1) : v;
     compute();
   });
 }
@@ -674,7 +791,24 @@ syncInput('years-input',  'years',   1,   99,   false);
 
 compute();
 
-// Scroll reveal
+// Mobile menu
+const mobileBtn=document.getElementById('nav-mobile-btn');
+const mobilePanel=document.getElementById('nav-mobile-panel');
+if(mobileBtn && mobilePanel){
+  mobileBtn.addEventListener('click',()=>{
+    const isOpen=mobilePanel.classList.toggle('open');
+    mobileBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    mobileBtn.querySelector('svg').innerHTML=isOpen
+      ? '<line x1="3" y1="6" x2="21" y2="18"/><line x1="3" y1="18" x2="21" y2="6"/>'
+      : '<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>';
+  });
+  mobilePanel.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click',()=>{
+      mobilePanel.classList.remove('open');
+      mobileBtn.setAttribute('aria-expanded','false');
+    });
+  });
+}
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
 },{threshold:0.1});
