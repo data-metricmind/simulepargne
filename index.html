@@ -778,6 +778,8 @@ const sliderTimers={};
 });
 
 // Free inputs → compute
+const inputLabels={'capital-input':'Argent de départ','monthly-input':'Versement mensuel','rate-input':'Rendement annuel','years-input':'Durée'};
+const inputTimers={};
 function syncInput(inputId, sliderId, min, max, isFloat){
   const inp=document.getElementById(inputId);
   inp.addEventListener('input',()=>compute());
@@ -786,6 +788,14 @@ function syncInput(inputId, sliderId, min, max, isFloat){
     if(isNaN(v)||v<min) v=min;
     inp.value=isFloat ? v.toFixed(1) : v;
     compute();
+    // Tracking : fire on blur (valeur finalisée)
+    window.dataLayer=window.dataLayer||[];
+    dataLayer.push({
+      event:'simulator_input',
+      input_name:inputLabels[inputId],
+      input_id:inputId,
+      input_value:v
+    });
   });
 }
 
