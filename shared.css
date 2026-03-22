@@ -1,0 +1,44 @@
+/* ═══════════════════════════════════════════
+   shared.css — Nav + Footer communs
+   Simule Épargne · À ne pas modifier manuellement
+   Modifier nav.html / footer.html à la place
+═══════════════════════════════════════════ */
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;flex-wrap:nowrap;padding:0 2.5rem;height:58px;background:#F7F3EC;border-bottom:1px solid #C8BFA8;overflow:hidden}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:#1C3A2F;text-decoration:none;letter-spacing:.3px;flex-shrink:0;white-space:nowrap}
+.nav-brand span{color:#B8975A}
+.nav-links{display:flex;gap:1.25rem;align-items:center;flex:1;justify-content:center;overflow:hidden}
+.nav-links a{font-size:11px;letter-spacing:.9px;text-transform:uppercase;color:#5A5248;text-decoration:none;transition:color .2s;white-space:nowrap;flex-shrink:0}
+.nav-links a:hover{color:#1C3A2F}
+.nav-links a.nav-articles{color:#B8975A}
+.nav-links a.nav-articles:hover{color:#D4B882}
+.nav-cta{background:#B8975A;color:#1C3A2F;font-size:11px;letter-spacing:.8px;text-transform:uppercase;padding:8px 18px;text-decoration:none;transition:background .2s;border-radius:2px;flex-shrink:0;font-weight:500;white-space:nowrap}
+.nav-cta:hover{background:#D4B882}
+.nav-mobile-btn{display:none;background:none;border:none;cursor:pointer;padding:4px;color:#1C3A2F;flex-shrink:0}
+.nav-mobile-btn svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2}
+.nav-mobile-panel{position:fixed;top:58px;left:0;right:0;background:#F7F3EC;border-bottom:1px solid #C8BFA8;padding:1rem 2.5rem;z-index:99;flex-direction:column;gap:.75rem;display:none !important}
+.nav-mobile-panel.open{display:flex !important}
+.nav-mobile-panel a{font-size:13px;letter-spacing:.8px;text-transform:uppercase;color:#5A5248;text-decoration:none;padding:.5rem 0;border-bottom:1px solid #C8BFA8}
+.nav-mobile-panel a:last-child{border-bottom:none;color:#B8975A}
+@media(max-width:900px){
+  .nav-links{display:none}
+  .nav-mobile-btn{display:block;margin-left:auto}
+  nav{padding:0 1.5rem}
+  .nav-cta{display:none}
+}
+
+/* ── FOOTER ── */
+footer{background:#0D1F18;padding:3.5rem 2.5rem 2rem}
+.foot-inner{max-width:960px;margin:0 auto}
+.foot-brand{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#E8DDD0}
+.foot-brand span{color:#B8975A}
+.foot-tagline{font-size:13px;color:#A89F94;margin-top:.25rem}
+.foot-about{font-size:13px;color:#A89F94;margin-top:.75rem;max-width:480px;line-height:1.65}
+.foot-nav{display:flex;gap:2rem;flex-wrap:wrap;margin-top:1.5rem}
+.foot-nav a{font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:#C8BFA8;text-decoration:none;transition:color .2s}
+.foot-nav a:hover{color:#B8975A}
+.foot-disc{font-size:11px;line-height:1.7;color:#7A7060;max-width:620px;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.08)}
+.foot-copy{font-size:11px;color:#4A5E55;margin-top:.75rem}
+.foot-copy a{color:#4A5E55;text-decoration:underline}
+.foot-copy a:hover{color:#C8BFA8}
