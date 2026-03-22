@@ -37,9 +37,8 @@
 }
 
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:#F7F3EC;color:#1C3A2F;line-height:1.7;font-size:16px}
+body{padding-top:58px;font-family:'DM Sans',sans-serif;background:#F7F3EC;color:#1C3A2F;line-height:1.7;font-size:16px}
 a:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:2px}
-nav{background:var(--dark);padding:0 2rem;height:52px;display:flex;align-items:center;justify-content:space-between}
 .nav-brand{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#1C3A2F;text-decoration:none}
 .nav-brand span{color:var(--gold)}
 .nav-back{font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:#C8BFA8;text-decoration:none;transition:color .2s}
@@ -105,6 +104,43 @@ footer{background:var(--dark);padding:2rem;text-align:center}
   .versus{grid-template-columns:1fr}
   .btn-ghost{display:block;margin-left:0;margin-top:.75rem}
 }
+/* ── NAV ── */
+body>nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;flex-wrap:nowrap;padding:0 2.5rem;height:58px;background:#F7F3EC;border-bottom:1px solid #C8BFA8;overflow:hidden}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:#1C3A2F;text-decoration:none;letter-spacing:.3px;flex-shrink:0;white-space:nowrap}
+.nav-brand span{color:#B8975A}
+.nav-links{display:flex;gap:1.5rem;align-items:center;flex:1;justify-content:center}
+.nav-links a{font-size:11px;letter-spacing:.9px;text-transform:uppercase;color:#5A5248;text-decoration:none;transition:color .2s;white-space:nowrap;flex-shrink:0}
+.nav-links a:hover{color:#1C3A2F}
+.nav-links a.nav-articles{color:#B8975A}
+.nav-links a.nav-articles:hover{color:#D4B882}
+.nav-cta{background:#B8975A;color:#1C3A2F;font-size:11px;letter-spacing:.8px;text-transform:uppercase;padding:8px 18px;text-decoration:none;transition:background .2s;border-radius:2px;flex-shrink:0;font-weight:500;white-space:nowrap}
+.nav-cta:hover{background:#D4B882}
+.nav-mobile-btn{display:none;background:none;border:none;cursor:pointer;padding:4px;color:#1C3A2F;flex-shrink:0}
+.nav-mobile-btn svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2}
+.nav-mobile-panel{position:fixed;top:58px;left:0;right:0;background:#F7F3EC;border-bottom:1px solid #C8BFA8;padding:1rem 2.5rem;z-index:99;flex-direction:column;gap:.75rem;display:none !important}
+.nav-mobile-panel.open{display:flex !important}
+.nav-mobile-panel a{font-size:13px;letter-spacing:.8px;text-transform:uppercase;color:#5A5248;text-decoration:none;padding:.5rem 0;border-bottom:1px solid #C8BFA8}
+.nav-mobile-panel a:last-child{border-bottom:none;color:#B8975A}
+@media(max-width:900px){
+  .nav-links{display:none}
+  .nav-mobile-btn{display:block;margin-left:auto}
+  body>nav{padding:0 1.5rem}
+  .nav-cta{display:none}
+}
+/* ── FOOTER ── */
+footer{background:#0D1F18;padding:3.5rem 2.5rem 2rem}
+.foot-inner{max-width:960px;margin:0 auto}
+.foot-brand{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#E8DDD0;display:block}
+.foot-brand span{color:#B8975A}
+.foot-tagline{font-size:13px;color:#A89F94;margin-top:.25rem}
+.foot-about{font-size:13px;color:#A89F94;margin-top:.75rem;max-width:480px;line-height:1.65}
+.foot-nav{display:flex;gap:2rem;flex-wrap:wrap;margin-top:1.5rem}
+.foot-nav a{font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:#C8BFA8;text-decoration:none;transition:color .2s}
+.foot-nav a:hover{color:#B8975A}
+.foot-disc{font-size:11px;line-height:1.7;color:#7A7060;max-width:620px;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.08)}
+.foot-copy{font-size:11px;color:#4A5E55;margin-top:.75rem}
+.foot-copy a{color:#4A5E55;text-decoration:underline}
+.foot-copy a:hover{color:#C8BFA8}
 </style>
 </head>
 <body>
@@ -112,8 +148,6 @@ footer{background:var(--dark);padding:2rem;text-align:center}
   <a class="nav-brand" href="../index.html">Simule<span> Épargne</span></a>
   <div class="nav-links">
     <a href="../index.html#simulateur">Simulateur</a>
-    <a href="../index.html#budget">50/30/20</a>
-    <a href="../index.html#enveloppes">Où placer ?</a>
     <a href="../index.html#faq">FAQ</a>
     <a href="../articles/index.html" class="nav-articles">Articles</a>
   </div>
@@ -124,8 +158,6 @@ footer{background:var(--dark);padding:2rem;text-align:center}
 </nav>
 <div class="nav-mobile-panel" id="nav-mobile-panel" role="navigation" aria-label="Menu mobile">
   <a href="../index.html#simulateur">Simulateur</a>
-  <a href="../index.html#budget">50/30/20</a>
-  <a href="../index.html#enveloppes">Où placer ?</a>
   <a href="../index.html#faq">FAQ</a>
   <a href="../articles/index.html">Articles →</a>
 </div>
@@ -268,13 +300,32 @@ footer{background:var(--dark);padding:2rem;text-align:center}
     <p class="foot-about">Simule Épargne est un projet indépendant. On n'est pas conseillers financiers — on partage ce qu'on a appris sur l'épargne, en langage simple.</p>
     <nav class="foot-nav" aria-label="Navigation footer">
       <a href="../index.html#simulateur">Simulateur</a>
-      <a href="../index.html#budget">50/30/20</a>
-      <a href="../index.html#enveloppes">Où placer ?</a>
+      <a href="../index.html#faq">FAQ</a>
       <a href="../articles/index.html">Articles</a>
     </nav>
     <p class="foot-disc">Ce site est éducatif et ne constitue pas un conseil en investissement. Les simulations sont données à titre indicatif. Pour toute décision financière, consultez un professionnel agréé.</p>
     <p class="foot-copy">© 2026 Simule Épargne — <a href="../mentions-legales.html">Mentions légales</a> · <a href="../politique-cookies.html">Politique cookies</a></p>
   </div>
 </footer>
+<script>
+(function(){
+  var btn=document.getElementById('nav-mobile-btn');
+  var panel=document.getElementById('nav-mobile-panel');
+  if(!btn||!panel)return;
+  btn.addEventListener('click',function(){
+    var open=panel.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    btn.querySelector('svg').innerHTML=open
+      ?'<line x1="3" y1="6" x2="21" y2="18"/><line x1="3" y1="18" x2="21" y2="6"/>'
+      :'<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>';
+  });
+  panel.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      panel.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    });
+  });
+})();
+</script>
 </body>
 </html>
