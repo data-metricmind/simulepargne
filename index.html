@@ -81,7 +81,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-KXWQPM96');</script>
 <!-- End Google Tag Manager -->
-<link rel="stylesheet" href="/shared.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -113,27 +112,27 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 .skip-link{position:absolute;top:-100px;left:1rem;background:var(--forest);color:var(--white);padding:.5rem 1rem;font-size:14px;z-index:999;transition:top .2s}
 .skip-link:focus{top:1rem}
 
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;gap:2rem;padding:0 2.5rem;height:58px;background:#F7F3EC;border-bottom:1px solid #C8BFA8}
-.nav-brand{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:#1C3A2F;text-decoration:none;letter-spacing:.3px;flex-shrink:0}
+/* ── NAV principale uniquement ── */
+body>nav, nav:not(.foot-nav){position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;flex-wrap:nowrap;padding:0 2.5rem;height:58px;background:#F7F3EC;border-bottom:1px solid #C8BFA8;overflow:hidden}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:#1C3A2F;text-decoration:none;letter-spacing:.3px;flex-shrink:0;white-space:nowrap}
 .nav-brand span{color:#B8975A}
-.nav-links{display:flex;gap:1.5rem;align-items:center;flex:1;justify-content:center}
-.nav-links a{font-size:11px;letter-spacing:.9px;text-transform:uppercase;color:#5A5248;text-decoration:none;transition:color .2s}
+.nav-links{display:flex;gap:1.25rem;align-items:center;flex:1;justify-content:center}
+.nav-links a{font-size:11px;letter-spacing:.9px;text-transform:uppercase;color:#5A5248;text-decoration:none;transition:color .2s;white-space:nowrap;flex-shrink:0}
 .nav-links a:hover{color:#1C3A2F}
 .nav-links a.nav-articles{color:#B8975A}
 .nav-links a.nav-articles:hover{color:#D4B882}
-.nav-cta{background:#B8975A;color:#1C3A2F;font-size:11px;letter-spacing:.8px;text-transform:uppercase;padding:8px 18px;text-decoration:none;transition:background .2s;border-radius:2px;flex-shrink:0;font-weight:500}
+.nav-cta{background:#B8975A;color:#1C3A2F;font-size:11px;letter-spacing:.8px;text-transform:uppercase;padding:8px 18px;text-decoration:none;transition:background .2s;border-radius:2px;flex-shrink:0;font-weight:500;white-space:nowrap}
 .nav-cta:hover{background:#D4B882}
-.nav-mobile-btn{display:none;background:none;border:none;cursor:pointer;padding:4px;color:#1C3A2F;margin-left:auto;flex-shrink:0}
+.nav-mobile-btn{display:none;background:none;border:none;cursor:pointer;padding:4px;color:#1C3A2F;flex-shrink:0}
 .nav-mobile-btn svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2}
 .nav-mobile-panel{position:fixed;top:58px;left:0;right:0;background:#F7F3EC;border-bottom:1px solid #C8BFA8;padding:1rem 2.5rem;z-index:99;flex-direction:column;gap:.75rem;display:none !important}
 .nav-mobile-panel.open{display:flex !important}
 .nav-mobile-panel a{font-size:13px;letter-spacing:.8px;text-transform:uppercase;color:#5A5248;text-decoration:none;padding:.5rem 0;border-bottom:1px solid #C8BFA8}
 .nav-mobile-panel a:last-child{border-bottom:none;color:#B8975A}
-@media(max-width:768px){
+@media(max-width:900px){
   .nav-links{display:none}
-  .nav-mobile-btn{display:block}
-  nav{padding:0 1.5rem}
+  .nav-mobile-btn{display:block;margin-left:auto}
+  body>nav{padding:0 1.5rem}
   .nav-cta{display:none}
 }
 
@@ -309,8 +308,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a class="nav-brand" href="index.html">Simule<span> Épargne</span></a>
   <div class="nav-links">
     <a href="index.html#simulateur">Simulateur</a>
-    <a href="index.html#budget">50/30/20</a>
-    <a href="index.html#enveloppes">Où placer ?</a>
     <a href="index.html#faq">FAQ</a>
     <a href="articles/index.html" class="nav-articles">Articles</a>
   </div>
@@ -321,8 +318,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </nav>
 <div class="nav-mobile-panel" id="nav-mobile-panel" role="navigation" aria-label="Menu mobile">
   <a href="index.html#simulateur">Simulateur</a>
-  <a href="index.html#budget">50/30/20</a>
-  <a href="index.html#enveloppes">Où placer ?</a>
   <a href="index.html#faq">FAQ</a>
   <a href="articles/index.html">Articles →</a>
 </div>

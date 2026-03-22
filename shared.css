@@ -1,14 +1,14 @@
-/* ═══════════════════════════════════════════
-   shared.css — Nav + Footer communs
-   Simule Épargne · À ne pas modifier manuellement
-   Modifier nav.html / footer.html à la place
-═══════════════════════════════════════════ */
+/* shared.css — Simule Épargne
+   Utilisé uniquement par : mentions-legales.html, politique-cookies.html, articles/index.html
+   Nav CSS : inline dans chaque page
+   Footer CSS : ici
+*/
 
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;flex-wrap:nowrap;padding:0 2.5rem;height:58px;background:#F7F3EC;border-bottom:1px solid #C8BFA8;overflow:hidden}
+/* ── NAV principale uniquement ── */
+body>nav, nav:not(.foot-nav){position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;flex-wrap:nowrap;padding:0 2.5rem;height:58px;background:#F7F3EC;border-bottom:1px solid #C8BFA8;overflow:hidden}
 .nav-brand{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;color:#1C3A2F;text-decoration:none;letter-spacing:.3px;flex-shrink:0;white-space:nowrap}
 .nav-brand span{color:#B8975A}
-.nav-links{display:flex;gap:1.25rem;align-items:center;flex:1;justify-content:center;overflow:hidden}
+.nav-links{display:flex;gap:1.25rem;align-items:center;flex:1;justify-content:center}
 .nav-links a{font-size:11px;letter-spacing:.9px;text-transform:uppercase;color:#5A5248;text-decoration:none;transition:color .2s;white-space:nowrap;flex-shrink:0}
 .nav-links a:hover{color:#1C3A2F}
 .nav-links a.nav-articles{color:#B8975A}
@@ -24,7 +24,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 @media(max-width:900px){
   .nav-links{display:none}
   .nav-mobile-btn{display:block;margin-left:auto}
-  nav{padding:0 1.5rem}
+  body>nav{padding:0 1.5rem}
   .nav-cta{display:none}
 }
 
