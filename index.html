@@ -282,9 +282,21 @@ body>nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-item
 .nav-cta:hover{background:#D4B882}
 .nav-mobile-btn{display:none;background:none;border:none;cursor:pointer;padding:8px 4px;color:#1C3A2F;flex-shrink:0;-webkit-tap-highlight-color:transparent}
 .nav-mobile-btn svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;display:block}
-.nav-mobile-panel{position:fixed;top:58px;left:0;right:0;background:#F7F3EC;border-bottom:2px solid #C8BFA8;padding:1rem 1.5rem calc(1rem + env(safe-area-inset-bottom));z-index:200;flex-direction:column;gap:0;display:none !important;box-shadow:0 4px 20px rgba(0,0,0,.08)}
-.nav-mobile-panel.open{display:flex !important}
-.nav-mobile-panel a{font-size:14px;letter-spacing:.6px;text-transform:uppercase;color:#1C3A2F;text-decoration:none;padding:.85rem 0;border-bottom:1px solid #E4DDD0;font-weight:400}
+.nav-mobile-panel{
+  position:fixed;top:58px;left:0;right:0;
+  background:#F7F3EC;border-bottom:2px solid #C8BFA8;
+  padding:0 1.5rem;z-index:200;
+  flex-direction:column;gap:0;
+  display:flex;
+  max-height:0;overflow:hidden;
+  transition:max-height .3s ease, padding .3s ease;
+  box-shadow:0 4px 20px rgba(0,0,0,.08);
+}
+.nav-mobile-panel.open{
+  max-height:300px;
+  padding:1rem 1.5rem;
+}
+.nav-mobile-panel a{font-size:14px;letter-spacing:.6px;text-transform:uppercase;color:#1C3A2F;text-decoration:none;padding:.85rem 0;border-bottom:1px solid #E4DDD0;font-weight:400;display:block}
 .nav-mobile-panel a:last-child{border-bottom:none;color:#B8975A;font-weight:500}
 @media(max-width:900px){
   .nav-links{display:none}
@@ -817,24 +829,6 @@ syncInput('years-input',  'years',   1,   99,   false);
 
 compute();
 
-// Mobile menu
-const mobileBtn=document.getElementById('nav-mobile-btn');
-const mobilePanel=document.getElementById('nav-mobile-panel');
-if(mobileBtn && mobilePanel){
-  mobileBtn.addEventListener('click',()=>{
-    const isOpen=mobilePanel.classList.toggle('open');
-    mobileBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    mobileBtn.querySelector('svg').innerHTML=isOpen
-      ? '<line x1="3" y1="6" x2="21" y2="18"/><line x1="3" y1="18" x2="21" y2="6"/>'
-      : '<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>';
-  });
-  mobilePanel.querySelectorAll('a').forEach(a=>{
-    a.addEventListener('click',()=>{
-      mobilePanel.classList.remove('open');
-      mobileBtn.setAttribute('aria-expanded','false');
-    });
-  });
-}
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
 },{threshold:0.1});
