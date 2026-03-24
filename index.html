@@ -280,12 +280,12 @@ body>nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-item
 .nav-links a.nav-articles:hover{color:#D4B882}
 .nav-cta{background:#B8975A;color:#1C3A2F;font-size:11px;letter-spacing:.8px;text-transform:uppercase;padding:8px 18px;text-decoration:none;transition:background .2s;border-radius:2px;flex-shrink:0;font-weight:500;white-space:nowrap}
 .nav-cta:hover{background:#D4B882}
-.nav-mobile-btn{display:none;background:none;border:none;cursor:pointer;padding:4px;color:#1C3A2F;flex-shrink:0}
-.nav-mobile-btn svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2}
-.nav-mobile-panel{position:fixed;top:58px;left:0;right:0;background:#F7F3EC;border-bottom:1px solid #C8BFA8;padding:1rem 2.5rem;z-index:99;flex-direction:column;gap:.75rem;display:none !important}
+.nav-mobile-btn{display:none;background:none;border:none;cursor:pointer;padding:8px 4px;color:#1C3A2F;flex-shrink:0;-webkit-tap-highlight-color:transparent}
+.nav-mobile-btn svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;display:block}
+.nav-mobile-panel{position:fixed;top:58px;left:0;right:0;background:#F7F3EC;border-bottom:2px solid #C8BFA8;padding:1rem 1.5rem calc(1rem + env(safe-area-inset-bottom));z-index:200;flex-direction:column;gap:0;display:none !important;box-shadow:0 4px 20px rgba(0,0,0,.08)}
 .nav-mobile-panel.open{display:flex !important}
-.nav-mobile-panel a{font-size:13px;letter-spacing:.8px;text-transform:uppercase;color:#5A5248;text-decoration:none;padding:.5rem 0;border-bottom:1px solid #C8BFA8}
-.nav-mobile-panel a:last-child{border-bottom:none;color:#B8975A}
+.nav-mobile-panel a{font-size:14px;letter-spacing:.6px;text-transform:uppercase;color:#1C3A2F;text-decoration:none;padding:.85rem 0;border-bottom:1px solid #E4DDD0;font-weight:400}
+.nav-mobile-panel a:last-child{border-bottom:none;color:#B8975A;font-weight:500}
 @media(max-width:900px){
   .nav-links{display:none}
   .nav-mobile-btn{display:block;margin-left:auto}
@@ -322,6 +322,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a class="nav-brand" href="index.html">Simule<span> Épargne</span></a>
   <div class="nav-links">
     <a href="index.html#simulateur">Simulateur</a>
+    <a href="index.html#demarrer">Commencer</a>
     <a href="index.html#faq">FAQ</a>
     <a href="articles/index.html" class="nav-articles">Articles</a>
   </div>
@@ -332,6 +333,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </nav>
 <div class="nav-mobile-panel" id="nav-mobile-panel" role="navigation" aria-label="Menu mobile">
   <a href="index.html#simulateur">Simulateur</a>
+  <a href="index.html#demarrer">Commencer</a>
   <a href="index.html#faq">FAQ</a>
   <a href="articles/index.html">Articles →</a>
 </div>
@@ -598,6 +600,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </li>
     </ol>
+    <div class="reveal" style="margin-top:2.5rem">
+      <a class="btn-primary" href="budget_50_30_20.xlsx" download
+         onclick="window.dataLayer=window.dataLayer||[];dataLayer.push({event:'file_download',file_name:'budget_50_30_20.xlsx',cta_location:'section_demarrer'});"
+         style="display:inline-flex;align-items:center;gap:.6rem">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Télécharger le modèle budget gratuit
+      </a>
+      <p style="font-size:12px;color:var(--muted);margin-top:.75rem">Fichier Excel — vos revenus, dépenses et épargne en 10 minutes</p>
+    </div>
   </div>
 </section>
 
