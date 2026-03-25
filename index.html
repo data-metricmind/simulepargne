@@ -173,6 +173,8 @@ input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 3px var(-
 .sim-val{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:#1C3A2F;line-height:1}
 .sim-val.sage{color:var(--sage)}
 .sim-sub{font-size:12px;color:#5A5248;margin-top:.2rem}
+/* ── Label dynamique taux ── */
+.rate-hint{font-size:12px;font-style:italic;color:#9A9082;margin-bottom:.5rem;min-height:16px;transition:opacity .2s}
 .chart-area{margin-top:2.5rem}
 .chart-legend{display:flex;gap:1.5rem;margin-bottom:.75rem;flex-wrap:wrap}
 .leg{display:flex;align-items:center;gap:.45rem;font-size:12px;color:#5A5248}
@@ -414,6 +416,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div>
           <label class="ctrl-lbl" for="rate">Rendement annuel estimé</label>
+          <div class="rate-hint" id="rate-hint" aria-live="polite">ex : Livret A, fonds euros</div>
           <div class="ctrl-row">
             <input type="range" id="rate" min="0.5" max="15" step="0.5" value="7" aria-label="Taux annuel (curseur)" aria-valuemin="0.5" aria-valuemax="15">
             <div class="ctrl-input-wrap">
@@ -776,6 +779,27 @@ function compute(){
   });
 }
 
+// Label dynamique taux
+function updateRateHint(rate) {
+  const hint = document.getElementById('rate-hint');
+  if (!hint) return;
+  if (rate <= 2)       hint.textContent = 'ex : Livret A, fonds euros sécurisés';
+  else if (rate <= 3.5) hint.textContent = 'ex : fonds euros, épargne peu risquée';
+  else if (rate <= 5)   hint.textContent = 'ex : mix épargne sécurisée et placements';
+  else if (rate <= 6.5) hint.textContent = 'ex : placements diversifiés, horizon moyen terme';
+  else if (rate <= 8)   hint.textContent = 'ex : investissement long terme, actions';
+  else                  hint.textContent = 'ex : investissement dynamique, horizon 15 ans+';
+}
+updateRateHint(7);
+
+// Désactiver preset actif si slider/input modifié manuellement
+['rate','rate-input'].forEach(id=>{
+  document.getElementById(id).addEventListener('input',()=>{
+    const v = parseFloat(document.getElementById('rate-input').value || document.getElementById('rate').value);
+    updateRateHint(v);
+  });
+});
+
 // Sliders → compute
 const sliderLabels={capital:'Argent de départ',monthly:'Versement mensuel',rate:'Rendement annuel',years:'Durée'};
 const sliderTimers={};
@@ -785,6 +809,7 @@ const sliderTimers={};
     const inp=document.getElementById(map[id]);
     const v=+document.getElementById(id).value;
     inp.value = id==='rate' ? v.toFixed(1) : v;
+    if(id==='rate') updateRateHint(v);
     compute();
     // Throttle : envoie l'event 800ms après que l'utilisateur arrête de glisser
     clearTimeout(sliderTimers[id]);
